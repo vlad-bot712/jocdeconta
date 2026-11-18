@@ -108,7 +108,7 @@ button.help-btn{background:var(--blue);color:#fff}
   <div class="row" style="justify-content:space-between"><span class="pill" id="roundLabel">ÎNTREBAREA 1/54</span><span class="pill" id="modeLabel">DUEL LIVE</span></div>
   <div class="scoreboard">
    <div class="player"><span class="small" id="p1label">TU</span><strong id="p1name">Jucător 1</strong><div class="points" id="p1score">0</div></div>
-   <div class="player"><span class="small" id="p2label">PRIETEN</span><strong id="p2name">Jucător 2</strong><div class="points" id="p2score">0</div></div>
+   <div class="player" id="p2box"><span class="small" id="p2label">PRIETEN</span><strong id="p2name">Jucător 2</strong><div class="points" id="p2score">0</div></div>
   </div>
   <div class="progress"><div class="bar" id="bar"></div></div>
   <div class="small" id="topic">CREDITE BANCARE</div>
@@ -171,33 +171,34 @@ button.help-btn{background:var(--blue);color:#fff}
    </article>
 
    <article class="theory-block" data-topic="provizioane">
-    <h3>3. Provizioane – definiție și clasificare</h3>
+    <h3>3. Provizioane – definiție și clasificare completă</h3>
     <ul>
      <li><b>Definiție:</b> Sume constituite din profitul curent pentru acoperirea unor <b>pierderi probabile</b>.</li>
      <li><b>Exemple:</b> litigii cu alte firme, amenzi, penalități, despăgubiri și daune, garanții acordate, reparații sau servicii.</li>
-     <li>Contul <span class="account">151</span> = Provizioane (funcție de <b>Pasiv</b>).</li>
+     <li>Contul general <span class="account">151</span> = Provizioane (funcție de <b>Pasiv</b>).</li>
     </ul>
-    <p><b>Subconturile din caiet:</b></p>
+    <p><b>Toate subconturile din caiet:</b></p>
     <ul>
-     <li><span class="account">1511</span> Provizioane pentru litigii.</li>
-     <li><span class="account">1512</span> Provizioane pentru garanții acordate clienților.</li>
-     <li><span class="account">1513</span> Provizioane pentru dezafectarea imobilizărilor corporale.</li>
-     <li><span class="account">1514</span> Provizioane pentru restructurare.</li>
-     <li><span class="account">1515</span> Provizioane pentru pensii și obligații similare.</li>
+     <li><span class="account">1511</span> – Provizioane pentru litigii.</li>
+     <li><span class="account">1512</span> – Provizioane pentru garanții acordate clienților.</li>
+     <li><span class="account">1513</span> – Provizioane pentru dezafectarea imobilizărilor corporale.</li>
+     <li><span class="account">1514</span> – Provizioane pentru restructurare.</li>
+     <li><span class="account">1515</span> – Provizioane pentru pensii și obligații similare.</li>
     </ul>
    </article>
 
    <article class="theory-block" data-topic="provizioane">
-    <h3>4. Funcționarea contului 151</h3>
+    <h3>4. Funcționarea contului 151 (inclusiv 1512, 1515)</h3>
     <ul>
      <li>Are funcție contabilă de <b>Pasiv</b> (începe cu Credit, crește în Credit, scade în Debit).</li>
-     <li><b>Se creditează (C)</b> la constituirea sau majorarea provizionului, prin debitul contului <span class="account">6812</span>.</li>
+     <li><b>Se creditează (C)</b> la constituirea sau majorarea provizionului (ex: <span class="account">1512</span> sau <span class="account">1515</span>), prin debitul contului <span class="account">6812</span>.</li>
      <li><b>Se debitează (D)</b> la diminuarea sau anularea provizionului rămas fără obiect, prin creditul contului <span class="account">7812</span>.</li>
      <li><b>Soldul final creditor (SFC)</b> arată valoarea provizioanelor existente la un moment dat.</li>
     </ul>
     <p><b>Formule din caiet:</b><br>
-    • Constituire: <span class="account">6812 = 1512</span><br>
-    • Anulare (neutilizat): <span class="account">1512 = 7812</span><br>
+    • Constituire (ex. pentru garanții): <span class="account">6812 = 1512</span><br>
+    • Constituire (ex. pentru pensii): <span class="account">6812 = 1515</span><br>
+    • Anulare (neutilizat): <span class="account">1512 = 7812</span> sau <span class="account">1515 = 7812</span><br>
     • Închidere cheltuială: <span class="account">121 = 6812</span><br>
     • Închidere venit: <span class="account">7812 = 121</span></p>
    </article>
@@ -214,18 +215,16 @@ button.help-btn{background:var(--blue);color:#fff}
   <h1>Ajutor, Teorie Explicată & Plan de Conturi 💡</h1>
   <p class="muted">Tot ce trebuie să știi ca să înțelegi logica din spatele formulelor contabile și cum se folosește jocul.</p>
 
-  <!-- Ghid de utilizare a jocului -->
   <div class="theory-block" style="margin-bottom:14px;border-color:var(--blue)">
    <h3 style="color:#60a5fa">🎮 Cum se joacă în 2 (Duel Live)?</h3>
    <ul>
     <li><b>Pasul 1 (Gazda):</b> Scrie numele, apasă <b>„＋ Creează cameră”</b> și primește un cod din 4 litere (ex: <code>AB12</code>).</li>
     <li><b>Pasul 2 (Prietenul):</b> Intră pe același link de pe calculatorul/telefonul lui, își scrie numele, bagă codul în căsuța „Cod cameră” și apasă <b>„Intră”</b>.</li>
-    <li><b>Pasul 3:</b> Gazda apasă <b>„Începe duelul”</b>. Întrebările sunt amestecate și apar identic la amândoi. Cine răspunde corect primește +1 punct.</li>
+    <li><b>Pasul 3:</b> Gazda apasă <b>„Începe duelul”</b>. Punctajul se afișează și se actualizează la amândoi <b>abia după ce ambii ați răspuns</b> la întrebare!</li>
     <li><b>Antrenament:</b> Dacă vrei să înveți singur înainte, apasă <b>„🎯 Joacă singur”</b>.</li>
    </ul>
   </div>
 
-  <!-- Regula de aur a contabilitatii -->
   <div class="theory-grid" style="margin-bottom:14px">
    <div class="theory-block">
     <h3>⚖️ Regula de Aur: Debit (D) vs. Credit (C)</h3>
@@ -251,15 +250,14 @@ button.help-btn{background:var(--blue);color:#fff}
      👉 Rezultat: <span class="account">666 = 1682</span></li>
      <li><b>Exemplul 3: Pui bani deoparte pentru un risc (Provizion).</b><br>
      1. E o cheltuială de exploatare (<span class="account">6812</span> → crește → <b>Debit</b>).<br>
-     2. Crește rezerva/provizionul (<span class="account">1512</span> = Pasiv → crește → <b>Credit</b>).<br>
-     👉 Rezultat: <span class="account">6812 = 1512</span></li>
+     2. Crește rezerva/provizionul (ex: <span class="account">1512</span> sau <span class="account">1515</span> = Pasiv → crește → <b>Credit</b>).<br>
+     👉 Rezultat: <span class="account">6812 = 1512</span> (sau <span class="account">1515</span>)</li>
     </ul>
    </div>
   </div>
 
-  <!-- Schema Planului de Conturi -->
   <div class="theory-block">
-   <h3>📊 Schema Planului de Conturi (Toate conturile din lecție)</h3>
+   <h3>📊 Schema Planului de Conturi (Toate conturile din lecție, incluzând 1512 și 1515)</h3>
    <p class="small">Învață prima cifră a contului (Clasa) și îți dai seama imediat ce face:</p>
    <table class="schema-table">
     <thead>
@@ -279,9 +277,39 @@ button.help-btn{background:var(--blue);color:#fff}
      </tr>
      <tr>
       <td><span class="account">151</span></td>
-      <td>Provizioane (1511–1515)</td>
+      <td>Provizioane (general)</td>
       <td><span class="badge-p">PASIV</span></td>
-      <td>Sume puse deoparte din profit pentru riscuri/pierderi probabile (litigii, garanții).</td>
+      <td>Grupa principală pentru sume puse deoparte din profit pentru riscuri/pierderi probabile.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1511</span></td>
+      <td>Provizioane pentru litigii</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Constituit când firma are procese în justiție cu pierderi probabile.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1512</span></td>
+      <td>Provizioane pentru garanții acordate clienților</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Constituit pentru eventuale reparații sau remedieri în garanție pentru produse vândute.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1513</span></td>
+      <td>Provizioane pentru dezafectare imobilizări</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Pentru costurile viitoare de demontare/dezafectare a unor active corporale.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1514</span></td>
+      <td>Provizioane pentru restructurare</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Constituit pentru cheltuieli generate de un proces de reorganizare/restructurare a firmei.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1515</span></td>
+      <td>Provizioane pentru pensii și obligații similare</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Pentru drepturi suplimentare de pensie sau alte obligații similare față de angajați.</td>
      </tr>
      <tr>
       <td><span class="account">161</span></td>
@@ -329,13 +357,13 @@ button.help-btn{background:var(--blue);color:#fff}
       <td><span class="account">6812</span></td>
       <td>Cheltuieli de exploatare privind provizioanele</td>
       <td><span class="badge-c">CHELTUIALĂ</span></td>
-      <td>Apare doar când <b>constituim</b> sau majorăm un provizion (<span class="account">6812 = 1512</span>).</td>
+      <td>Apare doar când <b>constituim</b> sau majorăm un provizion (<span class="account">6812 = 151x</span>).</td>
      </tr>
      <tr>
       <td><span class="account">7812</span></td>
       <td>Venituri din provizioane</td>
       <td><span class="badge-v">VENIT</span></td>
-      <td>Apare doar când <b>anulăm</b> un provizion rămas neutilizat (<span class="account">1512 = 7812</span>).</td>
+      <td>Apare doar când <b>anulăm</b> un provizion rămas neutilizat (<span class="account">151x = 7812</span>).</td>
      </tr>
     </tbody>
    </table>
@@ -352,7 +380,7 @@ button.help-btn{background:var(--blue);color:#fff}
   <span class="pill">DUEL TERMINAT</span><h1 id="winner">Bravo!</h1><p class="muted" id="endText"></p>
   <div class="scoreboard">
    <div class="player"><strong id="endP1">Jucător 1</strong><div class="points" id="endS1">0</div></div>
-   <div class="player"><strong id="endP2">Jucător 2</strong><div class="points" id="endS2">0</div></div>
+   <div class="player" id="endP2box"><strong id="endP2">Jucător 2</strong><div class="points" id="endS2">0</div></div>
   </div>
   <button id="again">Joacă din nou</button> <button id="homeBtn" class="secondary">Meniu</button>
  </section>
@@ -420,8 +448,15 @@ const Q = [
 ];
 
 const $ = id => document.getElementById(id);
-let peer=null, conn=null, isHost=false, solo=false, me="", other="", room="", idx=0, score=[0,0], answered=[false,false], myChoice=null, questions=[], waitingTimer=null;
+
+let peer = null, conn = null, isHost = false, solo = false;
+let me = "", other = "", room = "", idx = 0, questions = [];
+let myChoice = null;
 let prevScreen = "home";
+
+let hostScore = 0;
+let guestScore = 0;
+let roundAnswers = { host: null, guest: null };
 
 function show(id){
  ["home","lobby","game","theory","help","end"].forEach(x => $(x).classList.toggle("hidden", x !== id));
@@ -429,15 +464,43 @@ function show(id){
 }
 
 function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+
+// Amestecă atât ordinea întrebărilor, cât și variantele de răspuns A, B, C, D
+function prepareQuestions(){
+ return shuffle(Q).map(item => {
+  let correctText = item.a[item.c];
+  let shuffledAnswers = shuffle(item.a);
+  return {
+   t: item.t,
+   q: item.q,
+   a: shuffledAnswers,
+   c: shuffledAnswers.indexOf(correctText),
+   e: item.e
+  };
+ });
+}
+
 function status(id,s){$(id).textContent=s}
 function send(data){if(conn&&conn.open)conn.send(data)}
-function clean(){if(waitingTimer)clearTimeout(waitingTimer);if(conn){conn.close();conn=null}if(peer){peer.destroy();peer=null}}
-function reset(){clean();score=[0,0];idx=0;answered=[false,false];myChoice=null;solo=false}
+function clean(){if(conn){conn.close();conn=null}if(peer){peer.destroy();peer=null}}
+function reset(){
+ clean();
+ hostScore = 0; guestScore = 0; idx = 0;
+ roundAnswers = { host: null, guest: null };
+ myChoice = null; solo = false;
+}
 
 $("create").onclick=()=>{
- me=$("name").value.trim()||"Gazdă";isHost=true;room=Math.random().toString(36).slice(2,6).toUpperCase();
- $("shownCode").textContent=room;$("hostName").textContent=me;$("guestName").textContent="Se conectează…";
- $("guestState").textContent="În așteptare";$("start").disabled=true;show("lobby");status("lobbyStatus","Se creează camera…");
+ me=$("name").value.trim()||"Gazdă";
+ isHost=true;
+ room=Math.random().toString(36).slice(2,6).toUpperCase();
+ $("shownCode").textContent=room;
+ $("hostName").textContent=me;
+ $("guestName").textContent="Se conectează…";
+ $("guestState").textContent="În așteptare";
+ $("start").disabled=true;
+ show("lobby");
+ status("lobbyStatus","Se creează camera…");
  peer=new Peer("conta-duel-"+room.toLowerCase());
  peer.on("open",()=>status("lobbyStatus","Camera este gata! Trimite codul "+room+" prietenului."));
  peer.on("connection",c=>{if(conn){c.close();return}conn=c;wire();});
@@ -445,34 +508,291 @@ $("create").onclick=()=>{
 };
 
 $("join").onclick=()=>{
- me=$("name").value.trim()||"Jucător 2";room=$("roomCode").value.trim().toUpperCase();
+ me=$("name").value.trim()||"Jucător 2";
+ room=$("roomCode").value.trim().toUpperCase();
  if(room.length<4){status("homeStatus","Introdu codul camerei primit de la prieten.");return}
- isHost=false;status("homeStatus","Se conectează la camera "+room+"…");peer=new Peer();
+ isHost=false;
+ status("homeStatus","Se conectează la camera "+room+"…");
+ peer=new Peer();
  peer.on("open",()=>{conn=peer.connect("conta-duel-"+room.toLowerCase());wire()});
  peer.on("error",e=>status("homeStatus","Nu s-a putut conecta ("+e.type+"). Verificați codul și încercați din nou."));
 };
 
 function wire(){
  conn.on("open",()=>{
-  if(isHost){other="Prieten";$("guestName").textContent="Conectat";$("guestState").textContent="Online";$("start").disabled=false;status("lobbyStatus","Prietenul s-a conectat! Puteți începe.");send({type:"hello",name:me})}
-  else{status("homeStatus","Conectat! Se pregătește jocul…");send({type:"hello",name:me})}
+  if(isHost){
+   other="Prieten";
+   $("guestName").textContent="Conectat";
+   $("guestState").textContent="Online";
+   $("start").disabled=false;
+   status("lobbyStatus","Prietenul s-a conectat! Puteți începe.");
+   send({type:"hello",name:me});
+  } else {
+   status("homeStatus","Conectat! Se pregătește jocul…");
+   send({type:"hello",name:me});
+  }
  });
+
  conn.on("data",d=>{
-  if(d.type==="hello"&&isHost){other=d.name;$("guestName").textContent=other;$("guestState").textContent="Online";$("start").disabled=false;status("lobbyStatus",other+" s-a conectat. Puteți începe!")}
-  if(d.type==="begin"&&!isHost){other=d.host;questions=d.questions;score=[0,0];idx=0;show("game");renderQuestion()}
-  if(d.type==="question"&&!isHost){idx=d.idx;score=d.score;answered=[false,false];myChoice=null;renderQuestion()}
-  if(d.type==="answer"&&isHost){answered[1]=true;score[1]+=d.correct?1:0;updateScores();status("waitStatus",other+" a răspuns. "+(answered[0]?"Amândoi ați răspuns.":"Se așteaptă răspunsul tău…"));if(answered[0])reveal()}
-  if(d.type==="reveal"&&!isHost){score=d.score;revealUI(d.choices)}
-  if(d.type==="finish"&&!isHost){score=d.score;finish()}
-  if(d.type==="again"&&!isHost){score=[0,0];idx=0;questions=d.questions;renderQuestion()}
+  if(d.type==="hello"){
+   other = d.name;
+   if(isHost){
+    $("guestName").textContent=other;
+    $("guestState").textContent="Online";
+    $("start").disabled=false;
+    status("lobbyStatus",other+" s-a conectat. Puteți începe!");
+    send({type:"hello",name:me});
+   }
+  }
+
+  if(d.type==="begin" && !isHost){
+   other = d.host;
+   questions = d.questions;
+   hostScore = 0;
+   guestScore = 0;
+   idx = 0;
+   $("modeLabel").textContent="DUEL LIVE";
+   $("p2box").classList.remove("hidden");
+   show("game");
+   renderQuestion();
+  }
+
+  if(d.type==="question" && !isHost){
+   idx = d.idx;
+   hostScore = d.hostScore;
+   guestScore = d.guestScore;
+   renderQuestion();
+  }
+
+  if(d.type==="guest_answer" && isHost){
+   if(roundAnswers.guest !== null) return;
+   roundAnswers.guest = { choice: d.choice, correct: d.correct };
+   
+   if(roundAnswers.host !== null){
+    finalizeRoundHost();
+   } else {
+    status("waitStatus", other + " a răspuns! Așteptăm răspunsul tău…");
+    $("answerCount").textContent = "Tu: ⏳ · " + other + ": ✅ Gata";
+   }
+  }
+
+  if(d.type==="host_answered" && !isHost){
+   if(myChoice === null){
+    status("waitStatus", other + " a răspuns! Așteptăm răspunsul tău…");
+    $("answerCount").textContent = "Tu: ⏳ · " + other + ": ✅ Gata";
+   }
+  }
+
+  if(d.type==="reveal" && !isHost){
+   hostScore = d.hostScore;
+   guestScore = d.guestScore;
+   revealUI(d.hostChoice, d.guestChoice);
+  }
+
+  if(d.type==="finish" && !isHost){
+   hostScore = d.hostScore;
+   guestScore = d.guestScore;
+   finish();
+  }
  });
- conn.on("close",()=>{status("waitStatus","Conexiunea s-a întrerupt. Reîmprospătați pagina și reconectați-vă.");});
+
+ conn.on("close",()=>{
+  status("waitStatus","Conexiunea s-a întrerupt. Reîmprospătați pagina și reconectați-vă.");
+ });
 }
 
 function begin(){
- questions=shuffle(Q);score=[0,0];idx=0;show("game");$("modeLabel").textContent="DUEL LIVE";renderQuestion();send({type:"begin",host:me,questions});
+ questions = prepareQuestions();
+ hostScore = 0;
+ guestScore = 0;
+ idx = 0;
+ $("modeLabel").textContent = "DUEL LIVE";
+ $("p2box").classList.remove("hidden");
+ show("game");
+ renderQuestion();
+ send({type:"begin", host:me, questions});
 }
 $("start").onclick=()=>{if(isHost&&conn&&conn.open)begin()};
+
+function renderQuestion(){
+ myChoice = null;
+ roundAnswers = { host: null, guest: null };
+
+ $("feedback").classList.add("hidden");
+ $("next").classList.add("hidden");
+ $("hintBox").classList.add("hidden");
+ $("hintBox").textContent = "";
+ $("hintBtn").disabled = false;
+
+ let q = questions[idx];
+ $("roundLabel").textContent = "ÎNTREBAREA " + (idx+1) + "/" + questions.length;
+ $("bar").style.width = (idx / questions.length * 100) + "%";
+ $("topic").textContent = q.t.toUpperCase();
+ $("question").textContent = q.q;
+ $("answers").innerHTML = "";
+
+ q.a.forEach((a,i)=>{
+  let b = document.createElement("button");
+  b.className = "answer";
+  b.innerHTML = '<span class="letter">' + String.fromCharCode(65+i) + '</span><span></span>';
+  b.lastChild.textContent = a;
+  b.onclick = () => choose(i, b);
+  $("answers").appendChild(b);
+ });
+
+ status("waitStatus", solo ? "Alege răspunsul corect." : "Alege răspunsul. Scorul se actualizează după ce răspundeți amândoi.");
+ $("answerCount").textContent = solo ? "" : "Tu: ⏳ · " + (other||"Prieten") + ": ⏳";
+ updateScores();
+}
+
+function choose(i, b){
+ if(myChoice !== null) return;
+ myChoice = i;
+ let q = questions[idx];
+ [...$("answers").children].forEach(x => x.disabled = true);
+ b.classList.add("selected");
+
+ let isCorrect = (i === q.c);
+
+ if(solo){
+  if(isCorrect) hostScore++;
+  revealUI(i, null);
+  return;
+ }
+
+ if(isHost){
+  roundAnswers.host = { choice: i, correct: isCorrect };
+  if(roundAnswers.guest !== null){
+   finalizeRoundHost();
+  } else {
+   status("waitStatus", "Răspuns blocat! Se așteaptă " + other + "…");
+   $("answerCount").textContent = "Tu: ✅ Gata · " + other + ": ⏳";
+   send({type: "host_answered"});
+  }
+ } 
+ else {
+  send({type: "guest_answer", choice: i, correct: isCorrect});
+  if(roundAnswers.host !== null){
+   status("waitStatus", "Amândoi ați răspuns! Se calculează scorul…");
+  } else {
+   status("waitStatus", "Răspuns trimis! Se așteaptă " + other + "…");
+   $("answerCount").textContent = "Tu: ✅ Gata · " + other + ": ⏳";
+  }
+ }
+}
+
+function finalizeRoundHost(){
+ if(roundAnswers.host.correct) hostScore++;
+ if(roundAnswers.guest.correct) guestScore++;
+
+ send({
+  type: "reveal",
+  hostScore: hostScore,
+  guestScore: guestScore,
+  hostChoice: roundAnswers.host.choice,
+  guestChoice: roundAnswers.guest.choice
+ });
+
+ revealUI(roundAnswers.host.choice, roundAnswers.guest.choice);
+}
+
+function updateScores(){
+ $("p1name").textContent = me || "Tu";
+ if(solo){
+  $("p1score").textContent = hostScore;
+  return;
+ }
+ $("p2name").textContent = other || "Prieten";
+ if(isHost){
+  $("p1score").textContent = hostScore;
+  $("p2score").textContent = guestScore;
+ } else {
+  $("p1score").textContent = guestScore;
+  $("p2score").textContent = hostScore;
+ }
+}
+
+function revealUI(hChoice, gChoice){
+ let q = questions[idx];
+ let opponentChoice = isHost ? gChoice : hChoice;
+
+ [...$("answers").children].forEach((b,i)=>{
+  b.disabled = true;
+  if(i === q.c) b.classList.add("correct");
+  else if(i === myChoice) b.classList.add("wrong");
+ });
+
+ let amICorrect = (myChoice === q.c);
+ $("feedback").className = "feedback " + (amICorrect ? "good" : "bad");
+ 
+ let opponentInfo = "";
+ if(!solo && opponentChoice !== null && opponentChoice !== undefined){
+  let oppLetter = String.fromCharCode(65 + opponentChoice);
+  let oppOk = (opponentChoice === q.c);
+  opponentInfo = `<br><span class="small" style="color:var(--ink)">• <b>${other}</b> a ales varianta <b>${oppLetter}</b> (${oppOk ? "✅ Corect +1p" : "❌ Greșit"}).</span>`;
+ }
+
+ $("feedback").innerHTML = "<strong>" + (amICorrect ? "✅ Corect! +1 punct" : "❌ Greșit. Răspuns corect: " + String.fromCharCode(65+q.c)) + "</strong><br>" + q.e + opponentInfo;
+ $("feedback").classList.remove("hidden");
+
+ status("waitStatus", solo ? "Ai terminat întrebarea." : "Amândoi ați răspuns! Scorul a fost actualizat.");
+ $("answerCount").textContent = solo ? "" : "Runda încheiată";
+ 
+ updateScores();
+
+ $("next").classList.remove("hidden");
+ $("next").textContent = (idx === questions.length - 1) ? "Vezi rezultatul →" : "Următoarea întrebare →";
+ 
+ if(!isHost && !solo){
+  $("next").disabled = true;
+  status("waitStatus", "Scor actualizat! Așteptăm ca " + other + " să treacă la următoarea întrebare…");
+ } else {
+  $("next").disabled = false;
+ }
+}
+
+$("next").onclick=()=>{
+ if(!isHost && !solo) return;
+ if(idx === questions.length - 1){
+  if(isHost) send({type:"finish", hostScore, guestScore});
+  finish();
+  return;
+ }
+ idx++;
+ if(solo || isHost){
+  renderQuestion();
+  if(isHost) send({type:"question", idx, hostScore, guestScore});
+ }
+};
+
+function finish(){
+ show("end");
+ let myFinal = isHost ? hostScore : guestScore;
+ let otherFinal = isHost ? guestScore : hostScore;
+
+ $("endP1").textContent = me || "Tu";
+ $("endS1").textContent = myFinal;
+
+ if(solo){
+  $("endP2box").classList.add("hidden");
+  $("winner").textContent = "Antrenament terminat! 🎯";
+  $("endText").textContent = "Ai obținut " + myFinal + " puncte din " + questions.length + " întrebări.";
+  return;
+ }
+
+ $("endP2box").classList.remove("hidden");
+ $("endP2").textContent = other || "Prieten";
+ $("endS2").textContent = otherFinal;
+
+ if(myFinal === otherFinal){
+  $("winner").textContent = "Egalitate! 🤝";
+ } else if(myFinal > otherFinal){
+  $("winner").textContent = (me || "Tu") + " câștigă! 🏆";
+ } else {
+  $("winner").textContent = (other || "Prieten") + " câștigă! 🏆";
+ }
+ $("endText").textContent = "Ați răspuns la " + questions.length + " întrebări. " + (myFinal === otherFinal ? "Scor egal — revanșă?" : "Felicitări! Mai faceți o rundă ca să fixați materia.");
+}
 
 function makeHint(q){
  const text=q.q.toLowerCase();
@@ -490,101 +810,52 @@ function makeHint(q){
   return "Indiciu: emitentul primește un împrumut, iar obligațiunea atestă suma pe care o datorează deținătorului.";
  }
  if(q.t==="Provizioane"){
-  if(text.includes("151")) return "Indiciu: grupa începe cu 15 și este rezervată provizioanelor. Uită-te la subconturile 1511–1515.";
+  if(text.includes("151")) return "Indiciu: grupa începe cu 15 și este rezervată provizioanelor. Uită-te la subconturile 1511–1515 (ex: 1512 garanții, 1515 pensii).";
   if(text.includes("6812")||text.includes("7812")||text.includes("formul")) return "Indiciu: la constituire se folosește 6812 (cheltuială); la anularea provizionului neutilizat apare 7812 (venit).";
   return "Indiciu: provizioanele acoperă riscuri și cheltuieli probabile, nu datorii certe deja plătite.";
  }
  return "Indiciu: deschide butonul «❓ Ajutor & Conturi» ca să vezi tabelul complet!";
 }
 
-function renderQuestion(){
- answered=[false,false];myChoice=null;$("feedback").classList.add("hidden");$("next").classList.add("hidden");
- $("hintBox").classList.add("hidden");$("hintBox").textContent="";$("hintBtn").disabled=false;
- let q=questions[idx];
- $("roundLabel").textContent="ÎNTREBAREA "+(idx+1)+"/"+questions.length;
- $("bar").style.width=(idx/questions.length*100)+"%";
- $("topic").textContent=q.t.toUpperCase();
- $("question").textContent=q.q;
- $("answers").innerHTML="";
- q.a.forEach((a,i)=>{
-  let b=document.createElement("button");
-  b.className="answer";
-  b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';
-  b.lastChild.textContent=a;
-  b.onclick=()=>choose(i,b);
-  $("answers").appendChild(b);
- });
- status("waitStatus",solo?"Alege răspunsul corect.":"Așteptăm răspunsurile…");
- $("answerCount").textContent=solo?"":"Tu: — · "+(other||"Prieten")+": —";
- updateScores();
-}
-
-function choose(i,b){
- if(myChoice!==null)return;myChoice=i;let q=questions[idx];[...$("answers").children].forEach(x=>x.disabled=true);b.classList.add("selected");
- let correct=i===q.c;
- if(solo){score[0]+=correct?1:0;answered=[true,true];reveal();return}
- if(isHost){answered[0]=true;score[0]+=correct?1:0;updateScores();status("waitStatus","Ai răspuns. Se așteaptă "+other+"…");if(answered[1])reveal()}
- else{send({type:"answer",correct});status("waitStatus","Răspuns trimis. Se așteaptă rezultatul…")}
-}
-
-function updateScores(){$("p1name").textContent=me||"Tu";$("p2name").textContent=other||"Prieten";$("p1score").textContent=score[0];$("p2score").textContent=score[1];}
-
-function reveal(){
- let q=questions[idx],choices=[myChoice];if(isHost){send({type:"reveal",score,choices});}
- revealUI(choices);
-}
-
-function revealUI(choices){
- let q=questions[idx];[...$("answers").children].forEach((b,i)=>{b.disabled=true;if(i===q.c)b.classList.add("correct");else if(i===myChoice)b.classList.add("wrong")});
- let correct=myChoice===q.c;$("feedback").className="feedback "+(correct?"good":"bad");
- $("feedback").innerHTML="<strong>"+(correct?"Corect! +1 punct":"Nu chiar. Răspuns corect: "+String.fromCharCode(65+q.c))+"</strong><br>"+q.e;
- $("feedback").classList.remove("hidden");
- status("waitStatus",solo?"Ai terminat întrebarea.": "Răspunsurile au fost înregistrate.");
- $("answerCount").textContent="Scor actualizat";$("next").classList.remove("hidden");
- $("next").textContent=idx===questions.length-1?"Vezi rezultatul →":"Următoarea întrebare →";updateScores();
- if(!isHost&&!solo)$("next").disabled=true;
-}
-
-$("next").onclick=()=>{
- if(!isHost&&!solo)return;
- if(idx===questions.length-1){if(isHost)send({type:"finish",score});finish();return}
- idx++;if(solo||isHost){renderQuestion();if(isHost)send({type:"question",idx,score})}
+$("again").onclick=()=>{
+ if(solo){
+  hostScore=0; questions=prepareQuestions(); idx=0; renderQuestion(); show("game");
+ } else if(isHost && conn){
+  begin();
+ }
 };
-
-function finish(){
- show("end");$("endP1").textContent=me||"Tu";$("endP2").textContent=other||"Prieten";$("endS1").textContent=score[0];$("endS2").textContent=score[1];
- $("winner").textContent=score[0]===score[1]?"Egalitate! 🤝":(score[0]>score[1]?me:other)+" câștigă! 🏆";
- $("endText").textContent="Ați răspuns la "+questions.length+" întrebări. "+(score[0]===score[1]?"Scor egal — revanșă?":"Felicitări! Mai faceți o rundă ca să fixați materia.");
-}
-
-$("again").onclick=()=>{if(solo){score=[0,0];questions=shuffle(Q);idx=0;renderQuestion();show("game")}else if(isHost&&conn){begin()}};
 $("homeBtn").onclick=()=>{reset();show("home")};
 $("back").onclick=()=>{reset();show("home")};
 
-// Butoane Teorie
 $("openTheory").onclick=()=>{prevScreen="home";show("theory");filterTheory("all")};
 $("theoryFromGame").onclick=()=>{prevScreen="game";show("theory");filterTheory("all")};
 $("theoryBack").onclick=()=>show(prevScreen);
 $("startFromTheory").onclick=()=>{$("solo").click()};
 
-// Butoane Ajutor & Plan de conturi
 $("openHelp").onclick=()=>{prevScreen="home";show("help")};
 $("helpFromGame").onclick=()=>{prevScreen="game";show("help")};
 $("helpBack").onclick=()=>show(prevScreen);
 $("startFromHelp").onclick=()=>{$("solo").click()};
 
-// Indiciu
 $("hintBtn").onclick=()=>{let q=questions[idx];$("hintBox").textContent=makeHint(q);$("hintBox").classList.remove("hidden");$("hintBtn").disabled=true};
 
-// Filtrare tab-uri teorie
 function filterTheory(tab){
  document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x.dataset.tab===tab));
  document.querySelectorAll(".theory-block[data-topic]").forEach(x=>x.classList.toggle("hidden",tab!=="all"&&x.dataset.topic!==tab));
 }
 document.querySelectorAll("[data-tab]").forEach(x=>x.onclick=()=>filterTheory(x.dataset.tab));
 
-// Solo
-$("solo").onclick=()=>{reset();solo=true;me=$("name").value.trim()||"Tu";other="";questions=shuffle(Q);$("modeLabel").textContent="ANTRENAMENT";show("game");renderQuestion()};
+$("solo").onclick=()=>{
+ reset();
+ solo=true;
+ me=$("name").value.trim()||"Tu";
+ other="";
+ questions=prepareQuestions();
+ $("modeLabel").textContent="ANTRENAMENT";
+ $("p2box").classList.add("hidden");
+ show("game");
+ renderQuestion();
+};
 </script>
 </body>
 </html>
