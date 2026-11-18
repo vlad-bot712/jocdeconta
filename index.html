@@ -5,23 +5,44 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contabilitate Duel — Învață împreună</title>
 <style>
-:root{--bg:#101827;--panel:#19263a;--panel2:#22334b;--ink:#f4f7fb;--muted:#aebbd0;--green:#43d6a0;--red:#ff7185;--gold:#ffd166;--line:#344761}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#263b56 0,transparent 35%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-main{max-width:900px;margin:auto;padding:24px 16px 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.logo{font-weight:900;letter-spacing:.4px;font-size:clamp(20px,4vw,30px)}.logo span{color:var(--green)}.tag{color:var(--muted);font-size:13px}
+:root{--bg:#101827;--panel:#19263a;--panel2:#22334b;--ink:#f4f7fb;--muted:#aebbd0;--green:#43d6a0;--red:#ff7185;--gold:#ffd166;--blue:#3b82f6;--line:#344761}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 15% 0%,#263b56 0,transparent 35%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+main{max-width:920px;margin:auto;padding:24px 16px 50px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.logo{font-weight:900;letter-spacing:.4px;font-size:clamp(20px,4vw,30px)}.logo span{color:var(--green)}
+.tag{color:var(--muted);font-size:13px}
 .card{background:linear-gradient(160deg,var(--panel),#152033);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,30px);box-shadow:0 18px 50px #0003;margin-bottom:16px}
-h1,h2,h3,p{margin-top:0}h1{font-size:clamp(25px,5vw,38px);line-height:1.15;margin-bottom:10px}h2{font-size:22px}.muted{color:var(--muted)}.small{font-size:13px;color:var(--muted)}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(24px,5vw,36px);line-height:1.15;margin-bottom:10px}
+h2{font-size:22px}
+.muted{color:var(--muted)}.small{font-size:13px;color:var(--muted)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1}
 input{width:100%;background:#0f1928;border:1px solid var(--line);color:var(--ink);padding:14px 15px;border-radius:12px;font:inherit;min-width:0}
 button{border:0;border-radius:12px;padding:13px 17px;font:700 15px system-ui;cursor:pointer;transition:.15s;background:var(--green);color:#082319}
-button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:disabled{opacity:.4;cursor:not-allowed;transform:none}
-button.secondary{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}button.gold{background:var(--gold);color:#302300}
-button.help-btn{background:#3b82f6;color:#fff}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+button.secondary{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+button.gold{background:var(--gold);color:#302300}
+button.help-btn{background:var(--blue);color:#fff}
 .pill{display:inline-flex;padding:5px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:12px}
-.hidden{display:none!important}.status{padding:11px 13px;border-radius:12px;background:#0f1928;color:var(--muted);margin-top:12px;font-size:14px}
-.scoreboard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.player{padding:14px;border-radius:15px;background:#101b2b;border:1px solid var(--line)}.player strong{display:block;font-size:18px}.points{font-size:26px;font-weight:900;color:var(--green)}
-.progress{height:8px;background:#0c1522;border-radius:99px;overflow:hidden;margin:16px 0 20px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),#a2f4c8);transition:width .3s}
-.question{font-size:clamp(20px,4vw,27px);font-weight:800;line-height:1.3;margin:10px 0 20px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px}.answer{background:#22334b;color:var(--ink);border:1px solid #3a506d;text-align:left;min-height:65px;display:flex;gap:12px;align-items:center}.answer .letter{background:#101b2b;border-radius:8px;padding:5px 9px;color:var(--green);font-weight:900}.answer.selected{outline:2px solid var(--gold);background:#3a3a35}.answer.correct{background:#174b3d;border-color:var(--green)}.answer.wrong{background:#512b39;border-color:var(--red)}
+.hidden{display:none!important}
+.status{padding:11px 13px;border-radius:12px;background:#0f1928;color:var(--muted);margin-top:12px;font-size:14px}
+.scoreboard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.player{padding:14px;border-radius:15px;background:#101b2b;border:1px solid var(--line)}
+.player strong{display:block;font-size:18px}
+.points{font-size:26px;font-weight:900;color:var(--green)}
+.progress{height:8px;background:#0c1522;border-radius:99px;overflow:hidden;margin:16px 0 20px}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),#a2f4c8);transition:width .3s}
+.question{font-size:clamp(20px,4vw,27px);font-weight:800;line-height:1.3;margin:10px 0 20px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.answer{background:#22334b;color:var(--ink);border:1px solid #3a506d;text-align:left;min-height:65px;display:flex;gap:12px;align-items:center}
+.answer .letter{background:#101b2b;border-radius:8px;padding:5px 9px;color:var(--green);font-weight:900}
+.answer.selected{outline:2px solid var(--gold);background:#3a3a35}
+.answer.correct{background:#174b3d;border-color:var(--green)}
+.answer.wrong{background:#512b39;border-color:var(--red)}
 .feedback{margin-top:15px;padding:15px;border-radius:14px;background:#0f1928;border:1px solid var(--line)}
+.feedback.good{border-color:var(--green)}.feedback.bad{border-color:var(--red)}
 .hintbox{margin-top:12px;padding:14px;border:1px dashed var(--gold);border-radius:13px;background:#302a1c;color:#ffe8a3}
 .theory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .theory-block{background:#101b2b;border:1px solid var(--line);border-radius:15px;padding:16px}
@@ -29,46 +50,62 @@ button.help-btn{background:#3b82f6;color:#fff}
 .theory-block ul{padding-left:20px;margin:8px 0 0}
 .theory-block li{margin:6px 0}
 .account{display:inline-block;background:#293d55;border:1px solid #405a78;border-radius:7px;padding:2px 7px;margin:2px;font-weight:800;color:#d7f8e9}
-table.schema-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
-table.schema-table th, table.schema-table td{border:1px solid var(--line);padding:8px 10px;text-align:left}
-table.schema-table th{background:#1f304a;color:var(--green)}
-@media(max-width:650px){.theory-grid{grid-template-columns:1fr}}.feedback.good{border-color:var(--green)}.feedback.bad{border-color:var(--red)}
-.footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.tabs .pill{cursor:pointer}.tabs .active{background:var(--green);color:#082319;border-color:var(--green)}
+.schema-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.schema-table th,.schema-table td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+.schema-table th{background:#1f304a;color:var(--green)}
+.schema-table tr:nth-child(even){background:#132033}
+.badge-p{background:#512b39;color:#ff9aa8;padding:2px 6px;border-radius:5px;font-size:12px;font-weight:700}
+.badge-a{background:#174b3d;color:#6ee7b7;padding:2px 6px;border-radius:5px;font-size:12px;font-weight:700}
+.badge-c{background:#3b2f1c;color:#ffd166;padding:2px 6px;border-radius:5px;font-size:12px;font-weight:700}
+.badge-v{background:#1e3a5f;color:#93c5fd;padding:2px 6px;border-radius:5px;font-size:12px;font-weight:700}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.tabs .pill{cursor:pointer}.tabs .active{background:var(--green);color:#082319;border-color:var(--green)}
+@media(max-width:650px){.theory-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.answers{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.scoreboard{gap:7px}.footer{align-items:stretch;flex-direction:column}}
 </style>
 </head>
 <body>
 <main>
- <div class="top"><div class="logo">CONTABILITATE <span>DUEL</span> ⚡</div><div class="tag">Învață pentru mâine · 2 calculatoare · aceeași cameră</div></div>
+ <div class="top">
+  <div class="logo">CONTABILITATE <span>DUEL</span> ⚡</div>
+  <div class="tag">Învață pentru mâine · 2 calculatoare · aceeași cameră</div>
+ </div>
 
+ <!-- 1. MENIU PRINCIPAL -->
  <section id="home" class="card">
   <span class="pill">QUIZ LIVE · 2 JUCĂTORI</span>
   <h1>Vă testați unul pe altul. <span style="color:var(--green)">Cine ia mai multe puncte?</span></h1>
-  <p class="muted">Unul creează camera și îi trimite codul celuilalt. Aveți acum un set mare de întrebări numai de teorie. Intrați de pe calculatoare diferite, răspundeți la aceleași întrebări și vedeți scorul în timp real.</p>
-  <div class="row" style="margin:20px 0 12px"><input id="name" maxlength="18" placeholder="Numele tău (ex. Alex)"></div>
+  <p class="muted">Unul creează camera și îi trimite codul celuilalt. Intrați de pe calculatoare diferite, răspundeți la aceleași întrebări și vedeți scorul în timp real.</p>
+  <div class="row" style="margin:20px 0 12px"><input id="name" maxlength="18" placeholder="Numele tău (ex. Vlad)"></div>
   <div class="row">
    <button id="create">＋ Creează cameră</button>
    <div style="display:flex;gap:8px;flex:1"><input id="roomCode" maxlength="6" placeholder="Cod cameră" style="text-transform:uppercase"><button id="join" class="secondary">Intră</button></div>
   </div>
   <div id="homeStatus" class="status">Alegeți cine creează camera. Pentru joc online, amândoi trebuie să aveți internet.</div>
   <div class="row" style="margin-top:14px">
-   <button id="solo" class="secondary">Joacă singur</button>
-   <button id="openTheory" class="gold">📚 Învață teoria</button>
+   <button id="solo" class="secondary">🎯 Joacă singur</button>
+   <button id="openTheory" class="gold">📚 Teoria din caiet</button>
    <button id="openHelp" class="help-btn">❓ Ajutor & Plan Conturi</button>
   </div>
  </section>
 
+ <!-- 2. LOBBY MULTIPLAYER -->
  <section id="lobby" class="card hidden">
   <span class="pill">CAMERA VOASTRĂ</span><h2>Codul camerei</h2>
   <div style="font-size:42px;font-weight:900;letter-spacing:8px;color:var(--green)" id="shownCode">----</div>
   <p class="muted">Trimite codul prietenului tău. El îl introduce pe pagina jocului, de pe calculatorul lui.</p>
   <div id="lobbyStatus" class="status">Se așteaptă al doilea jucător…</div>
-  <div class="scoreboard"><div class="player"><span class="small">TU</span><strong id="hostName">Jucător 1</strong><span class="pill">Gazdă</span></div><div class="player"><span class="small">PRIETEN</span><strong id="guestName">Se conectează…</strong><span class="pill" id="guestState">În așteptare</span></div></div>
+  <div class="scoreboard">
+   <div class="player"><span class="small">TU</span><strong id="hostName">Jucător 1</strong><span class="pill">Gazdă</span></div>
+   <div class="player"><span class="small">PRIETEN</span><strong id="guestName">Se conectează…</strong><span class="pill" id="guestState">În așteptare</span></div>
+  </div>
   <button id="start" disabled>Începe duelul</button> <button id="back" class="secondary">Înapoi</button>
  </section>
 
+ <!-- 3. ECRAN DE JOC -->
  <section id="game" class="card hidden">
-  <div class="row" style="justify-content:space-between"><span class="pill" id="roundLabel">ÎNTREBAREA 1/20</span><span class="pill" id="modeLabel">DUEL LIVE</span></div>
+  <div class="row" style="justify-content:space-between"><span class="pill" id="roundLabel">ÎNTREBAREA 1/54</span><span class="pill" id="modeLabel">DUEL LIVE</span></div>
   <div class="scoreboard">
    <div class="player"><span class="small" id="p1label">TU</span><strong id="p1name">Jucător 1</strong><div class="points" id="p1score">0</div></div>
    <div class="player"><span class="small" id="p2label">PRIETEN</span><strong id="p2name">Jucător 2</strong><div class="points" id="p2score">0</div></div>
@@ -78,9 +115,9 @@ table.schema-table th{background:#1f304a;color:var(--green)}
   <div class="question" id="question">Întrebarea apare aici</div>
   <div class="answers" id="answers"></div>
   <div class="row" style="margin-top:12px">
-   <button id="hintBtn" class="secondary">💡 Arată-mi un indiciu</button>
-   <button id="theoryFromGame" class="secondary">📚 Deschide teoria</button>
-   <button id="helpFromGame" class="help-btn">❓ Ajutor & Plan Conturi</button>
+   <button id="hintBtn" class="secondary">💡 Indiciu</button>
+   <button id="theoryFromGame" class="gold">📚 Teorie</button>
+   <button id="helpFromGame" class="help-btn">❓ Ajutor & Conturi</button>
   </div>
   <div id="hintBox" class="hintbox hidden"></div>
   <div class="status" id="waitStatus">Alege răspunsul corect.</div>
@@ -88,10 +125,11 @@ table.schema-table th{background:#1f304a;color:var(--green)}
   <div class="footer"><span class="small" id="answerCount">Răspunsurile voastre apar aici.</span><button id="next" class="gold hidden">Următoarea întrebare →</button></div>
  </section>
 
+ <!-- 4. TEORIA DIN CAIET -->
  <section id="theory" class="card hidden">
   <span class="pill">FIȘĂ DE ÎNVĂȚARE · DIN NOTIȚELE TALE</span>
   <h1>Teoria, pe scurt și schematic 📚</h1>
-  <p class="muted">Recapitulează aici înainte de duel sau când nu știi un răspuns. Am păstrat noțiunile și conturile care apar în pozele caietului.</p>
+  <p class="muted">Filtrează pe capitole ca să recapitulezi rapid definițiile, conturile și formulele din caiet.</p>
   <div class="tabs">
    <span class="pill active" data-tab="all">Toată teoria</span>
    <span class="pill" data-tab="credite">Credite bancare</span>
@@ -102,68 +140,66 @@ table.schema-table th{background:#1f304a;color:var(--green)}
    <article class="theory-block" data-topic="credite">
     <h3>1. Credite bancare pe termen lung</h3>
     <ul>
-     <li>Contul <span class="account">162</span> = credite bancare pe termen lung.</li>
-     <li>Sunt împrumuturi bancare pe o perioadă mai mare de un an.</li>
+     <li>Contul <span class="account">162</span> = credite bancare pe termen lung (funcție de <b>Pasiv</b>).</li>
+     <li>Sunt împrumuturi bancare pe o perioadă <b>mai mare de un an</b>.</li>
      <li>Sunt purtătoare de dobândă, stabilită în funcție de politica fiecărei bănci.</li>
      <li>Dobânda este cheltuială financiară, evidențiată în contul <span class="account">666</span> – cheltuieli privind dobânzile.</li>
      <li>Ratele și dobânzile se rambursează la scadență, conform ratelor stabilite de bancă.</li>
      <li>Întârzierea plății poate atrage dobânzi majorate, penalități, amenzi și executare silită.</li>
-     <li>Împrumutul se contractează pe bază de contract și se depune în contul bancar.</li>
+     <li>Împrumutul se contractează pe bază de contract și se depune în contul bancar (<span class="account">5121</span>).</li>
     </ul>
-    <p><b>Formule din exemplul din caiet:</b><br><span class="account">5121 = 1621</span> înregistrarea creditului primit<br><span class="account">666 = 1682</span> înregistrarea dobânzii</p>
+    <p><b>Formule din caiet:</b><br>
+    • Primirea creditului în cont: <span class="account">5121 = 1621</span><br>
+    • Înregistrarea dobânzii: <span class="account">666 = 1682</span></p>
    </article>
+
    <article class="theory-block" data-topic="obligatiuni">
     <h3>2. Împrumuturi din emisiunea de obligațiuni</h3>
     <ul>
-     <li>Obligațiunea este o hârtie de valoare care atestă suma dată cu împrumut emitentului, sub formă de datorie.</li>
-     <li>Vânzarea împrumutului se face prin bursa de valori.</li>
-     <li>În notițe sunt prezentate ca împrumuturi obligatare pe termen lung.</li>
-     <li>Contul <span class="account">161</span> = împrumuturi din emisiunea de obligațiuni.</li>
-     <li>Contul <span class="account">461</span> apare cu denumirea „Debitori”.</li>
-     <li>Contul <span class="account">1618</span> = împrumuturi din emisiunea de obligațiuni.</li>
-     <li>Dobânda aferentă este cheltuială privind dobânzile: contul <span class="account">666</span>; în exemplu apare <span class="account">1681</span>.</li>
+     <li><b>Obligațiunea</b> este o hârtie de valoare care atestă suma dată cu împrumut emitentului, sub formă de datorie.</li>
+     <li>Vânzarea împrumutului se face prin <b>bursa de valori</b>.</li>
+     <li>Sunt împrumuturi obligatare pe termen lung.</li>
+     <li>Contul <span class="account">161</span> = împrumuturi din emisiunea de obligațiuni (funcție de <b>Pasiv</b>).</li>
+     <li>Contul <span class="account">461</span> = „Debitori” (cine subscrie/cumpără obligațiunile).</li>
+     <li>Contul <span class="account">1618</span> = alte împrumuturi din emisiunea de obligațiuni.</li>
+     <li>Dobânda aferentă: contul <span class="account">666</span> (cheltuială) și <span class="account">1681</span> (dobânzi aferente împrumuturilor din emisiuni de obligațiuni).</li>
     </ul>
-    <p><b>Formule din exemplul din caiet:</b><br><span class="account">461 = 1618</span> emiterea obligațiunilor<br><span class="account">666 = 1681</span> dobânda lunară<br><span class="account">5121 = 461</span> încasarea prin bancă</p>
+    <p><b>Formule din caiet:</b><br>
+    • Emiterea obligațiunilor: <span class="account">461 = 1618</span><br>
+    • Dobânda lunară: <span class="account">666 = 1681</span><br>
+    • Încasarea prin bancă: <span class="account">5121 = 461</span></p>
    </article>
+
    <article class="theory-block" data-topic="provizioane">
-    <h3>3. Provizioane – definiție și scop</h3>
+    <h3>3. Provizioane – definiție și clasificare</h3>
     <ul>
-     <li>Provizioane sunt sume constituite din profitul curent pentru acoperirea unor pierderi probabile.</li>
-     <li>Exemple din notițe: litigii cu alte firme, amenzi, penalități, despăgubiri și daune.</li>
-     <li>Pot acoperi cheltuieli previzibile din garanții acordate, reparații sau servicii.</li>
-     <li>Contul <span class="account">151</span> = provizioane.</li>
+     <li><b>Definiție:</b> Sume constituite din profitul curent pentru acoperirea unor <b>pierderi probabile</b>.</li>
+     <li><b>Exemple:</b> litigii cu alte firme, amenzi, penalități, despăgubiri și daune, garanții acordate, reparații sau servicii.</li>
+     <li>Contul <span class="account">151</span> = Provizioane (funcție de <b>Pasiv</b>).</li>
     </ul>
-    <h3>Clasificarea provizioanelor din caiet</h3>
+    <p><b>Subconturile din caiet:</b></p>
     <ul>
      <li><span class="account">1511</span> Provizioane pentru litigii.</li>
      <li><span class="account">1512</span> Provizioane pentru garanții acordate clienților.</li>
-     <li><span class="account">1513</span> Provizioane pentru dezafectarea imobilizărilor corporale și alte acțiuni similare.</li>
+     <li><span class="account">1513</span> Provizioane pentru dezafectarea imobilizărilor corporale.</li>
      <li><span class="account">1514</span> Provizioane pentru restructurare.</li>
      <li><span class="account">1515</span> Provizioane pentru pensii și obligații similare.</li>
     </ul>
    </article>
+
    <article class="theory-block" data-topic="provizioane">
     <h3>4. Funcționarea contului 151</h3>
     <ul>
-     <li>Contul 151 ține evidența provizioanelor constituite.</li>
-     <li>În notițe, contul are funcție contabilă de pasiv.</li>
-     <li>Se creditează cu valoarea provizioanelor constituite sau majorate, în corespondență cu debitul contului <span class="account">6812</span>.</li>
-     <li>Se debitează cu diminuările/anulările, în corespondență cu creditul contului <span class="account">7812</span>.</li>
-     <li>Soldul final creditor reprezintă valoarea provizioanelor existente.</li>
+     <li>Are funcție contabilă de <b>Pasiv</b> (începe cu Credit, crește în Credit, scade în Debit).</li>
+     <li><b>Se creditează (C)</b> la constituirea sau majorarea provizionului, prin debitul contului <span class="account">6812</span>.</li>
+     <li><b>Se debitează (D)</b> la diminuarea sau anularea provizionului rămas fără obiect, prin creditul contului <span class="account">7812</span>.</li>
+     <li><b>Soldul final creditor (SFC)</b> arată valoarea provizioanelor existente la un moment dat.</li>
     </ul>
-    <p><b>Formule din caiet:</b><br><span class="account">6812 = 1512</span> constituirea provizionului<br><span class="account">1512 = 7812</span> anularea provizionului neutilizat<br><span class="account">121 = 6812</span> închiderea cheltuielii<br><span class="account">7812 = 121</span> închiderea venitului</p>
-   </article>
-   <article class="theory-block" data-topic="all">
-    <h3>5. Reține rapid conturile</h3>
-    <ul>
-     <li><span class="account">161</span> – împrumuturi din emisiunea de obligațiuni.</li>
-     <li><span class="account">162</span> – credite bancare pe termen lung.</li>
-     <li><span class="account">151</span> – provizioane.</li>
-     <li><span class="account">666</span> – cheltuieli privind dobânzile.</li>
-     <li><span class="account">6812</span> – apare în formula de constituire a provizionului.</li>
-     <li><span class="account">7812</span> – apare în formula de anulare a provizionului.</li>
-     <li><span class="account">5121</span> – cont bancar în formulele din exemple.</li>
-    </ul>
+    <p><b>Formule din caiet:</b><br>
+    • Constituire: <span class="account">6812 = 1512</span><br>
+    • Anulare (neutilizat): <span class="account">1512 = 7812</span><br>
+    • Închidere cheltuială: <span class="account">121 = 6812</span><br>
+    • Închidere venit: <span class="account">7812 = 121</span></p>
    </article>
   </div>
   <div class="row" style="margin-top:18px">
@@ -172,61 +208,383 @@ table.schema-table th{background:#1f304a;color:var(--green)}
   </div>
  </section>
 
- <!-- ECRAN DE AJUTOR ȘI SCHEMA CONTURILOR -->
+ <!-- 5. AJUTOR COMPLET & SCHEMA PLANULUI DE CONTURI -->
  <section id="help" class="card hidden">
-  <span class="pill" style="background:#3b82f6;color:#fff">GHID COMPLET & SCHEMA CONTURILOR</span>
-  <h1>Cum funcționează totul în Contabilitate? 💡</h1>
-  <p class="muted">Această secțiune îți explică teoria de bază, regulile conturilor și o schemă clară a planului de conturi folosit în lecțiile tale.</p>
-  
-  <div class="theory-grid" style="margin-bottom:16px">
-   <div class="theory-block">
-    <h3>📌 Ce este Debitul și Creditul?</h3>
-    <p class="small">Contabilitatea se bazează pe partida dublă (orice sumă intrată undeva trebuie să aibă o sursă). Regula de aur:</p>
-    <ul>
-     <li><b>Conturile de Active</b> (bunuri, bani în bancă): Cresc în <b>Debit (D)</b> și scad în <b>Credit (C)</b>.</li>
-     <li><b>Conturile de Pasiv / Datorii / Capital</b> (credite, obligațiuni, provizioane): Scad în <b>Debit (D)</b> și cresc în <b>Credit (C)</b>.</li>
-     <li><b>Conturile de Cheltuieli</b> (ex: dobânzi): Se înregistrează de regulă în Debit.</li>
-     <li><b>Conturile de Venituri</b>: Se înregistrează de regulă în Credit.</li>
-    </ul>
-   </div>
-   <div class="theory-block">
-    <h3>⚡ Schema Planului de Conturi (Grupate pe lecții)</h3>
-    <table class="schema-table">
-     <tr><th>Simbol</th><th>Denumire Cont</th><th>Tip / Funcție</th></tr>
-     <tr><td><span class="account">161</span></td><td>Împrumuturi din emisiunea de obligațiuni</td><td>Pasiv (Datorii)</td></tr>
-     <tr><td><span class="account">162</span></td><td>Credite bancare pe termen lung</td><td>Pasiv (Datorii)</td></tr>
-     <tr><td><span class="account">151</span></td><td>Provizioane (1511-1515)</td><td>Pasiv (Datorii/Riscuri)</td></tr>
-     <tr><td><span class="account">461</span></td><td>Debitori diverși (în emisiune obligațiuni)</td><td>Activ (Creanțe)</td></tr>
-     <tr><td><span class="account">5121</span></td><td>Conturi la bănci în lei</td><td>Activ (Disponibilități)</td></tr>
-     <tr><td><span class="account">666</span></td><td>Cheltuieli privind dobânzile</td><td>Cheltuială</td></tr>
-     <tr><td><span class="account">6812</span></td><td>Cheltuieli cu provizioanele</td><td>Cheltuială</td></tr>
-     <tr><td><span class="account">7812</span></td><td>Venituri din provizioane</td><td>Venit</td></tr>
-     <tr><td><span class="account">121</span></td><td>Profit și pierdere (închidere)</td><td>Bifuncțional</td></tr>
-    </table>
-   </div>
-  </div>
+  <span class="pill" style="background:var(--blue);color:#fff">GHID COMPLET · CUM FUNCȚIONEAZĂ TOTUL</span>
+  <h1>Ajutor, Teorie Explicată & Plan de Conturi 💡</h1>
+  <p class="muted">Tot ce trebuie să știi ca să înțelegi logica din spatele formulelor contabile și cum se folosește jocul.</p>
 
-  <div class="theory-block" style="margin-bottom:16px">
-   <h3>🧠 Cum gândești o înregistrare contabilă la examen?</h3>
+  <!-- Ghid de utilizare a jocului -->
+  <div class="theory-block" style="margin-bottom:14px;border-color:var(--blue)">
+   <h3 style="color:#60a5fa">🎮 Cum se joacă în 2 (Duel Live)?</h3>
    <ul>
-    <li><b>Când primești un credit bancar în cont:</b> Intră bani în bancă (<span class="account">5121</span> crește = Debit) și crește datoria la bancă (<span class="account">1621</span> crește = Credit). Formula devine: <span class="account">5121 = 1621</span>.</li>
-    <li><b>Când calculezi dobânda:</b> Este o cheltuială a firmei (<span class="account">666</span> crește în Debit) și o datorie accesorie care crește (<span class="account">168x</span> în Credit). Formula: <span class="account">666 = 1682</span> (sau <span class="account">1681</span>).</li>
-    <li><b>Când constituie un provizion:</b> Generează o cheltuială (<span class="account">6812</span> în Debit) pentru un risc probabil pus deoparte (<span class="account">1512</span> în Credit). Formula: <span class="account">6812 = 1512</span>.</li>
+    <li><b>Pasul 1 (Gazda):</b> Scrie numele, apasă <b>„＋ Creează cameră”</b> și primește un cod din 4 litere (ex: <code>AB12</code>).</li>
+    <li><b>Pasul 2 (Prietenul):</b> Intră pe același link de pe calculatorul/telefonul lui, își scrie numele, bagă codul în căsuța „Cod cameră” și apasă <b>„Intră”</b>.</li>
+    <li><b>Pasul 3:</b> Gazda apasă <b>„Începe duelul”</b>. Întrebările sunt amestecate și apar identic la amândoi. Cine răspunde corect primește +1 punct.</li>
+    <li><b>Antrenament:</b> Dacă vrei să înveți singur înainte, apasă <b>„🎯 Joacă singur”</b>.</li>
    </ul>
   </div>
 
+  <!-- Regula de aur a contabilitatii -->
+  <div class="theory-grid" style="margin-bottom:14px">
+   <div class="theory-block">
+    <h3>⚖️ Regula de Aur: Debit (D) vs. Credit (C)</h3>
+    <p class="small">În contabilitate, orice operațiune are o dublă înregistrare: <b>Cont Debitor = Cont Creditor</b> (stânga = dreapta).</p>
+    <ul>
+     <li><span class="badge-a">ACTIV (A)</span> = Ce are firma (bani în bancă, bunuri, creanțe).<br><b>Crește în DEBIT (+)</b> și <b>Scade în CREDIT (-)</b>.</li>
+     <li><span class="badge-p">PASIV (P)</span> = Ce datorează firma (credite, obligațiuni, provizioane).<br><b>Crește în CREDIT (+)</b> și <b>Scade în DEBIT (-)</b>.</li>
+     <li><span class="badge-c">CHELTUIELI (Clasa 6)</span> = Costuri (dobânzi, constituire provizioane).<br>Funcționează ca Activul: apar în <b>DEBIT (+)</b> și se închid la final de lună în <b>CREDIT</b> prin contul <span class="account">121</span>.</li>
+     <li><span class="badge-v">VENITURI (Clasa 7)</span> = Câștiguri (anulări provizioane).<br>Funcționează ca Pasivul: apar în <b>CREDIT (+)</b> și se închid la final de lună în <b>DEBIT</b> prin contul <span class="account">121</span>.</li>
+    </ul>
+   </div>
+
+   <div class="theory-block">
+    <h3>🧠 Cum deduci singur orice formulă?</h3>
+    <ul>
+     <li><b>Exemplul 1: Primești un credit de la bancă.</b><br>
+     1. Intră bani în contul bancar (<span class="account">5121</span> = Activ → crește → <b>Debit</b>).<br>
+     2. Crește datoria față de bancă (<span class="account">1621</span> = Pasiv → crește → <b>Credit</b>).<br>
+     👉 Rezultat: <span class="account">5121 = 1621</span></li>
+     <li><b>Exemplul 2: Înregistrezi dobânda la credit.</b><br>
+     1. Dobânda e o cheltuială (<span class="account">666</span> → crește → <b>Debit</b>).<br>
+     2. Crește datoria cu dobânda de plată (<span class="account">1682</span> = Pasiv → crește → <b>Credit</b>).<br>
+     👉 Rezultat: <span class="account">666 = 1682</span></li>
+     <li><b>Exemplul 3: Pui bani deoparte pentru un risc (Provizion).</b><br>
+     1. E o cheltuială de exploatare (<span class="account">6812</span> → crește → <b>Debit</b>).<br>
+     2. Crește rezerva/provizionul (<span class="account">1512</span> = Pasiv → crește → <b>Credit</b>).<br>
+     👉 Rezultat: <span class="account">6812 = 1512</span></li>
+    </ul>
+   </div>
+  </div>
+
+  <!-- Schema Planului de Conturi -->
+  <div class="theory-block">
+   <h3>📊 Schema Planului de Conturi (Toate conturile din lecție)</h3>
+   <p class="small">Învață prima cifră a contului (Clasa) și îți dai seama imediat ce face:</p>
+   <table class="schema-table">
+    <thead>
+     <tr>
+      <th>Cont</th>
+      <th>Denumire oficială</th>
+      <th>Funcție</th>
+      <th>Când se folosește în probleme</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td><span class="account">121</span></td>
+      <td>Profit sau pierdere</td>
+      <td><b>B</b> (Bifuncțional)</td>
+      <td>La final de lună, închide cheltuielile (<span class="account">121 = 6812</span>) și veniturile (<span class="account">7812 = 121</span>).</td>
+     </tr>
+     <tr>
+      <td><span class="account">151</span></td>
+      <td>Provizioane (1511–1515)</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Sume puse deoparte din profit pentru riscuri/pierderi probabile (litigii, garanții).</td>
+     </tr>
+     <tr>
+      <td><span class="account">161</span></td>
+      <td>Împrumuturi din emisiunea de obligațiuni</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Datoria firmei când vinde obligațiuni pe bursă (în exemplu apare analiticul <span class="account">1618</span>).</td>
+     </tr>
+     <tr>
+      <td><span class="account">162</span></td>
+      <td>Credite bancare pe termen lung</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Împrumuturi luate de la bancă pe o perioadă mai mare de 1 an (analitic <span class="account">1621</span>).</td>
+     </tr>
+     <tr>
+      <td><span class="account">1681</span></td>
+      <td>Dobânzi aferente împrumuturilor din obligațiuni</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Datoria cu dobânda pe care firma trebuie să o plătească deținătorilor de obligațiuni.</td>
+     </tr>
+     <tr>
+      <td><span class="account">1682</span></td>
+      <td>Dobânzi aferente creditelor bancare pe termen lung</td>
+      <td><span class="badge-p">PASIV</span></td>
+      <td>Datoria cu dobânda pe care firma trebuie să o plătească băncii pentru credit.</td>
+     </tr>
+     <tr>
+      <td><span class="account">461</span></td>
+      <td>Debitori diverși</td>
+      <td><span class="badge-a">ACTIV</span></td>
+      <td>Arată banii pe care trebuie să îi încasăm de la cei care au cumpărat obligațiunile.</td>
+     </tr>
+     <tr>
+      <td><span class="account">5121</span></td>
+      <td>Conturi la bănci în lei</td>
+      <td><span class="badge-a">ACTIV</span></td>
+      <td>Contul curent al firmei la bancă (intră banii din credit sau din obligațiuni).</td>
+     </tr>
+     <tr>
+      <td><span class="account">666</span></td>
+      <td>Cheltuieli privind dobânzile</td>
+      <td><span class="badge-c">CHELTUIALĂ</span></td>
+      <td>Orice dobândă calculată (atât la credite bancare, cât și la obligațiuni).</td>
+     </tr>
+     <tr>
+      <td><span class="account">6812</span></td>
+      <td>Cheltuieli de exploatare privind provizioanele</td>
+      <td><span class="badge-c">CHELTUIALĂ</span></td>
+      <td>Apare doar când <b>constituim</b> sau majorăm un provizion (<span class="account">6812 = 1512</span>).</td>
+     </tr>
+     <tr>
+      <td><span class="account">7812</span></td>
+      <td>Venituri din provizioane</td>
+      <td><span class="badge-v">VENIT</span></td>
+      <td>Apare doar când <b>anulăm</b> un provizion rămas neutilizat (<span class="account">1512 = 7812</span>).</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+
   <div class="row" style="margin-top:18px">
-   <button id="helpBack" class="secondary">← Înapoi la meniu</button>
+   <button id="helpBack" class="secondary">← Înapoi</button>
+   <button id="startFromHelp" class="green">Am înțeles! Începe antrenamentul</button>
   </div>
  </section>
 
+ <!-- 6. ECRAN FINAL -->
  <section id="end" class="card hidden">
   <span class="pill">DUEL TERMINAT</span><h1 id="winner">Bravo!</h1><p class="muted" id="endText"></p>
-  <div class="scoreboard"><div class="player"><strong id="endP1">Jucător 1</strong><div class="points" id="endS1">0</div></div><div class="player"><strong id="endP2">Jucător 2</strong><div class="points" id="endS2">0</div></div></div>
+  <div class="scoreboard">
+   <div class="player"><strong id="endP1">Jucător 1</strong><div class="points" id="endS1">0</div></div>
+   <div class="player"><strong id="endP2">Jucător 2</strong><div class="points" id="endS2">0</div></div>
+  </div>
   <button id="again">Joacă din nou</button> <button id="homeBtn" class="secondary">Meniu</button>
  </section>
- <p class="small" style="text-align:center;margin-top:22px">Întrebările și fișa de teorie sunt construite după notițele din pozele trimise. Indiciile te ajută să găsești singur răspunsul.</p>
+
+ <p class="small" style="text-align:center;margin-top:22px">Întrebările, schema conturilor și fișa de teorie sunt construite după notițele din caiet.</p>
 </main>
+
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <script>
-const Q = [{"t": "Credite bancare", "q": "Ce reprezintă contul 162? ", "a": ["Credite bancare pe termen lung", "Provizioane pentru litigii", "Împrumuturi din obligațiuni", "Cheltuieli cu dobânzile"], "c": 0, "e": "În notițe, contul 162 este «Credite bancare pe termen lung»."}, {"t": "Credite bancare", "q": "Creditele bancare pe termen lung sunt împrumuturi acordate pentru o perioadă…", "a": ["Mai mare de un an", "Mai mică de o lună", "Exact o săptămână", "De cel mult o lună"], "c": 0, "e": "Notițele precizează o perioadă mai mare de un an."}, {"t": "Credite bancare", "q": "Creditele bancare sunt purtătoare de…", "a": ["Dobândă", "Provizioane", "Acțiuni", "Amortizare"], "c": 0, "e": "Creditele bancare sunt purtătoare de dobândă."}, {"t": "Credite bancare", "q": "Dobânda creditului bancar se înregistrează în contul…", "a": ["666", "162", "1512", "5121"], "c": 0, "e": "Contul 666 este «Cheltuieli privind dobânzile»."}, {"t": "Credite bancare", "q": "Cheltuielile cu dobânzile se rambursează…", "a": ["La scadență, sub formă de rate stabilite de bancă", "Numai la finalul fiecărei zile", "Doar dacă firma obține profit", "O singură dată, înainte de contract"], "c": 0, "e": "Notițele spun că dobânzile se rambursează la scadență, sub formă de rate stabilite de bancă."}, {"t": "Credite bancare", "q": "Ce se poate întâmpla dacă ratele și dobânzile sunt plătite cu întârziere?", "a": ["Dobânzi majorate, penalități și amenzi", "Datoria se anulează automat", "Creditul devine venit", "Banca acordă automat o reducere"], "c": 0, "e": "Întârzierea poate atrage dobânzi majorate, penalități, amenzi și chiar executare silită."}, {"t": "Credite bancare", "q": "Potrivit notițelor, împrumutul bancar se contractează pe baza…", "a": ["Unui contract și se depune în contul bancar", "Unei facturi de vânzare", "Unui bon fiscal", "Unui proces-verbal de inventariere"], "c": 0, "e": "Împrumutul se contractează pe bază de contract și se depune în contul bancar."}, {"t": "Credite bancare", "q": "Contul 5121 este folosit în exemplul din caiet pentru…", "a": ["Contul bancar", "Dobânzi", "Provizioane", "Obligațiuni"], "c": 0, "e": "5121 este contul bancar utilizat în formulele din exemplu."}, {"t": "Credite bancare", "q": "Care este formula notată pentru înregistrarea împrumutului bancar primit?", "a": ["5121 = 1621", "1621 = 5121", "666 = 1681", "6812 = 1512"], "c": 0, "e": "În caiet, înregistrarea creditului primit este 5121 = 1621."}, {"t": "Credite bancare", "q": "Care este formula notată pentru înregistrarea dobânzii aferente creditului?", "a": ["666 = 1682", "1682 = 666", "5121 = 1621", "1512 = 7812"], "c": 0, "e": "În exemplul din caiet apare formula 666 = 1682."}, {"t": "Obligațiuni", "q": "Ce este obligațiunea?", "a": ["O hârtie de valoare care atestă suma datorată de emitent", "Un document de încasare a salariului", "Un mijloc fix", "Un tip de provizion"], "c": 0, "e": "Aceasta este definiția din notițe."}, {"t": "Obligațiuni", "q": "Obligațiunea atestă pentru deținător…", "a": ["O sumă dată cu împrumut emitentului", "Dreptul de a încasa salariul", "Proprietatea asupra unui mijloc fix", "O cheltuială de exploatare"], "c": 0, "e": "Obligațiunea atestă suma dată cu împrumut emitentului, sub formă de datorie."}, {"t": "Obligațiuni", "q": "Vânzarea împrumutului/obligațiunilor se face prin…", "a": ["Bursa de valori", "Casa de marcat", "Registrul de casă", "Inventariere"], "c": 0, "e": "Notițele precizează că vânzarea se face prin bursa de valori."}, {"t": "Obligațiuni", "q": "Împrumuturile din emisiunea de obligațiuni sunt, în notițe, împrumuturi…", "a": ["Obligatare pe termen lung", "Fără dobândă, pe termen scurt", "Doar între salariați", "Pentru achiziții în numerar"], "c": 0, "e": "Sunt numite împrumuturi obligatare pe termen lung."}, {"t": "Obligațiuni", "q": "Ce cont evidențiază împrumuturile din emisiunea de obligațiuni?", "a": ["161", "162", "151", "666"], "c": 0, "e": "Contul 161 este «Împrumuturi din emisiunea de obligațiuni»."}, {"t": "Obligațiuni", "q": "Contul 161 are funcția contabilă…", "a": ["Pasivă", "Activă", "Bifuncțională numai pentru numerar", "Nu are funcție contabilă"], "c": 0, "e": "În clasificarea din caiet, contul 161 este marcat cu P (pasiv)."}, {"t": "Obligațiuni", "q": "În exemplul din caiet, contul 461 este denumit…", "a": ["Debitori", "Conturi la bănci în lei", "Cheltuieli privind dobânzile", "Provizioane"], "c": 0, "e": "În notițe, 461 apare cu denumirea «Debitori»."}, {"t": "Obligațiuni", "q": "În exemplul emisiunii, contul 1618 este denumit…", "a": ["Împrumuturi din emisiunea de obligațiuni", "Credite bancare pe termen lung", "Provizioane pentru litigii", "Dobânzi de plătit"], "c": 0, "e": "Aceasta este denumirea notată lângă contul 1618."}, {"t": "Obligațiuni", "q": "Dobânda lunară aferentă împrumutului obligatar se înregistrează ca…", "a": ["Cheltuială privind dobânzile", "Venit din vânzarea mărfurilor", "Provizion pentru garanții", "Capital social"], "c": 0, "e": "În caiet, dobânda lunară este înregistrată prin contul 666."}, {"t": "Obligațiuni", "q": "Ce cont apare în notițe pentru dobânzile aferente împrumuturilor din emisiuni de obligațiuni?", "a": ["1681", "1682", "1512", "1621"], "c": 0, "e": "În exemplu apare contul 1681 pentru dobânzile aferente împrumutului obligatar."}, {"t": "Obligațiuni", "q": "Care este formula notată pentru înregistrarea dobânzii obligațiunilor?", "a": ["666 = 1681", "1681 = 666", "5121 = 461", "6812 = 1512"], "c": 0, "e": "Formula din caiet este 666 = 1681."}, {"t": "Obligațiuni", "q": "Încasarea prin bancă a împrumutului obligatar este înregistrată în caiet prin…", "a": ["5121 = 461", "461 = 5121", "666 = 1681", "1512 = 7812"], "c": 0, "e": "În notițe apare formula 5121 = 461."}, {"t": "Provizioane", "q": "Provizioanele sunt sume constituite din…", "a": ["Profitul curent", "Capitalul social subscris", "Contul bancar personal", "Veniturile din vânzarea obligațiunilor"], "c": 0, "e": "Definiția din caiet: sume constituite din profitul curent."}, {"t": "Provizioane", "q": "Provizioanele se constituie pentru acoperirea…", "a": ["Pierderilor probabile", "Tuturor veniturilor viitoare", "Capitalului social", "Încasărilor certe"], "c": 0, "e": "Scopul lor este acoperirea unor pierderi probabile."}, {"t": "Provizioane", "q": "Care dintre următoarele situații este menționată ca motiv pentru constituirea provizioanelor?", "a": ["Litigii cu alte firme", "Încasarea unui credit", "Achiziția de mărfuri", "Plata unei facturi curente"], "c": 0, "e": "Notițele menționează litigii cu alte firme."}, {"t": "Provizioane", "q": "Care altă situație este menționată în notițe ca motiv pentru provizioane?", "a": ["Amenzi, penalități, despăgubiri și daune", "Încasări din vânzări", "Depuneri de numerar", "Achiziții de acțiuni"], "c": 0, "e": "Aceste riscuri și cheltuieli probabile sunt enumerate în definiție."}, {"t": "Provizioane", "q": "Provizioanele pot acoperi cheltuieli previzibile din…", "a": ["Garanții acordate, reparații sau servicii", "Doar salarii", "Doar impozite deja achitate", "Doar dividende"], "c": 0, "e": "Exemplele din caiet includ garanții acordate, reparații sau servicii."}, {"t": "Provizioane", "q": "Ce cont este folosit pentru provizioane?", "a": ["151", "161", "162", "5121"], "c": 0, "e": "Clasificarea din caiet identifică grupa 151 ca provizioane."}, {"t": "Provizioane", "q": "Contul 1511 reprezintă…", "a": ["Provizioane pentru litigii", "Provizioane pentru garanții acordate clienților", "Credite bancare pe termen lung", "Dobânzi aferente obligațiunilor"], "c": 0, "e": "1511 este denumit «Provizioane pentru litigii»."}, {"t": "Provizioane", "q": "Contul 1512 reprezintă…", "a": ["Provizioane pentru garanții acordate clienților", "Provizioane pentru litigii", "Împrumuturi obligatare", "Dobânzi bancare"], "c": 0, "e": "1512 este denumit «Provizioane pentru garanții acordate clienților»."}, {"t": "Provizioane", "q": "Contul 1513 se referă la provizioane pentru…", "a": ["Dezafectarea imobilizărilor corporale și alte acțiuni similare legate de acestea", "Litigii", "Dobânzi bancare", "Credite pe termen lung"], "c": 0, "e": "Aceasta este denumirea din lista de clasificare."}, {"t": "Provizioane", "q": "Contul 1514 este pentru provizioane pentru…", "a": ["Restructurare", "Litigii", "Garanții acordate clienților", "Împrumuturi obligatare"], "c": 0, "e": "În caiet: 1514 «Provizioane pentru restructurare»."}, {"t": "Provizioane", "q": "Contul 1515 este pentru provizioane pentru…", "a": ["Pensii și obligații similare", "Litigii", "Dobânzi", "Credite bancare"], "c": 0, "e": "În caiet: 1515 «Provizioane pentru pensii și obligații similare»."}, {"t": "Provizioane", "q": "Ce se întâmplă cu provizionul atunci când este constituit?", "a": ["Este evidențiat în contul 151", "Este înregistrat în contul 5121", "Este trecut direct în contul 162", "Este înregistrat în contul 461"], "c": 0, "e": "Contul 151 ține evidența provizioanelor."}, {"t": "Provizioane", "q": "Potrivit formulei din exemplu, la constituirea provizionului se debitează…", "a": ["6812", "1512", "7812", "5121"], "c": 0, "e": "Formula este 6812 = 1512; contul 6812 este în debit."}, {"t": "Provizioane", "q": "Potrivit formulei din exemplu, la constituirea provizionului se creditează…", "a": ["1512", "6812", "5121", "121"], "c": 0, "e": "Formula este 6812 = 1512; contul 1512 este în credit."}, {"t": "Provizioane", "q": "Care este formula contabilă din exemplu pentru constituirea provizionului pentru garanții acordate?", "a": ["6812 = 1512", "1512 = 7812", "121 = 6812", "5121 = 1621"], "c": 0, "e": "Aceasta este formula din caiet pentru constituire."}, {"t": "Provizioane", "q": "Ce înseamnă anularea unui provizion neutilizat?", "a": ["Provizionul nu mai este necesar și este reluat", "Se acordă un nou credit bancar", "Se emite o obligațiune", "Se încasează dobânda"], "c": 0, "e": "Notițele prezintă anularea provizionului neutilizat."}, {"t": "Provizioane", "q": "Care este formula din caiet pentru anularea provizionului neutilizat?", "a": ["1512 = 7812", "6812 = 1512", "5121 = 1621", "666 = 1681"], "c": 0, "e": "Formula notată pentru anulare este 1512 = 7812."}, {"t": "Provizioane", "q": "La anularea provizionului, contul 1512 se…", "a": ["Debitează", "Creditează", "Închide direct în 5121", "Transformă în cont de activ"], "c": 0, "e": "În formula 1512 = 7812, contul 1512 este debitat."}, {"t": "Provizioane", "q": "La anularea provizionului, contul 7812 se…", "a": ["Creditează", "Debitează", "Închide în 1621", "Nu se folosește"], "c": 0, "e": "În formula 1512 = 7812, contul 7812 este creditat."}, {"t": "Provizioane", "q": "La închiderea conturilor de venituri și cheltuieli, în exemplul din caiet apare contul…", "a": ["121", "5121", "1621", "461"], "c": 0, "e": "În formulele de închidere din caiet apare contul 121."}, {"t": "Provizioane", "q": "Care formulă din caiet închide cheltuiala cu provizionul?", "a": ["121 = 6812", "6812 = 1512", "1512 = 7812", "5121 = 461"], "c": 0, "e": "În exemplu apare 121 = 6812."}, {"t": "Provizioane", "q": "Care formulă din caiet închide venitul din anularea provizionului?", "a": ["7812 = 121", "121 = 7812", "6812 = 1512", "1621 = 5121"], "c": 0, "e": "În exemplu apare 7812 = 121."}, {"t": "Provizioane", "q": "Soldul final creditor al contului 151 reprezintă…", "a": ["Valoarea provizioanelor existente", "Valoarea creditelor bancare încasate", "Valoarea obligațiunilor emise", "Valoarea dobânzilor plătite"], "c": 0, "e": "Notițele precizează că soldul final creditor reprezintă valoarea provizioanelor existente."}, {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat creditelor bancare pe termen lung?", "a": ["162", "161", "151", "666"], "c": 0, "e": "162 = Credite bancare pe termen lung."}, {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat împrumuturilor din emisiunea de obligațiuni?", "a": ["161", "162", "1512", "5121"], "c": 0, "e": "161 = Împrumuturi din emisiunea de obligațiuni."}, {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat provizioanelor?", "a": ["151", "161", "162", "666"], "c": 0, "e": "151 = Provizioane."}, {"t": "Recapitulare", "q": "Care cont din notițe este cheltuiala privind dobânzile?", "a": ["666", "7812", "121", "461"], "c": 0, "e": "666 = Cheltuieli privind dobânzile."}, {"t": "Recapitulare", "q": "Ce tip de datorii reprezintă împrumuturile de la bănci sau de la alți agenți economici, contractate pentru acoperirea temporară a resurselor financiare?", "a": ["Datorii financiare", "Provizioane", "Venituri în avans", "Capitaluri proprii"], "c": 0, "e": "Notițele descriu împrumuturile ca datorii financiare, pasiv."}, {"t": "Recapitulare", "q": "În clasificarea din caiet, conturile 161 și 162 au funcția…", "a": ["Pasivă", "Activă", "De venit", "De cheltuială"], "c": 0, "e": "În tabelul de clasificare, conturile 161 și 162 sunt marcate cu P."}, {"t": "Recapitulare", "q": "Care afirmație descrie corect provizioanele?", "a": ["Sunt constituite pentru riscuri și cheltuieli probabile", "Sunt bani primiți de la bancă", "Sunt obligațiuni vândute la bursă", "Sunt dobânzi încasate"], "c": 0, "e": "Aceasta rezumă definiția provizioanelor din notițe."}, {"t": "Recapitulare", "q": "Care afirmație despre obligațiuni este corectă potrivit caietului?", "a": ["Emitentul datorează deținătorului suma împrumutată", "Obligațiunea este un provizion", "Obligațiunea reprezintă numerar în casă", "Obligațiunea este o rată bancară"], "c": 0, "e": "Obligațiunea atestă suma dată cu împrumut emitentului."}, {"t": "Recapitulare", "q": "Care afirmație despre creditul bancar este corectă potrivit caietului?", "a": ["Este
+const Q = [
+ {"t": "Credite bancare", "q": "Ce reprezintă contul 162?", "a": ["Credite bancare pe termen lung", "Provizioane pentru litigii", "Împrumuturi din obligațiuni", "Cheltuieli cu dobânzile"], "c": 0, "e": "În notițe, contul 162 este «Credite bancare pe termen lung»."},
+ {"t": "Credite bancare", "q": "Creditele bancare pe termen lung sunt împrumuturi acordate pentru o perioadă…", "a": ["Mai mare de un an", "Mai mică de o lună", "Exact o săptămână", "De cel mult o lună"], "c": 0, "e": "Notițele precizează o perioadă mai mare de un an."},
+ {"t": "Credite bancare", "q": "Creditele bancare sunt purtătoare de…", "a": ["Dobândă", "Provizioane", "Acțiuni", "Amortizare"], "c": 0, "e": "Creditele bancare sunt purtătoare de dobândă."},
+ {"t": "Credite bancare", "q": "Dobânda creditului bancar se înregistrează în contul…", "a": ["666", "162", "1512", "5121"], "c": 0, "e": "Contul 666 este «Cheltuieli privind dobânzile»."},
+ {"t": "Credite bancare", "q": "Cheltuielile cu dobânzile se rambursează…", "a": ["La scadență, sub formă de rate stabilite de bancă", "Numai la finalul fiecărei zile", "Doar dacă firma obține profit", "O singură dată, înainte de contract"], "c": 0, "e": "Notițele spun că dobânzile se rambursează la scadență, sub formă de rate stabilite de bancă."},
+ {"t": "Credite bancare", "q": "Ce se poate întâmpla dacă ratele și dobânzile sunt plătite cu întârziere?", "a": ["Dobânzi majorate, penalități și amenzi", "Datoria se anulează automat", "Creditul devine venit", "Banca acordă automat o reducere"], "c": 0, "e": "Întârzierea poate atrage dobânzi majorate, penalități, amenzi și chiar executare silită."},
+ {"t": "Credite bancare", "q": "Potrivit notițelor, împrumutul bancar se contractează pe baza…", "a": ["Unui contract și se depune în contul bancar", "Unei facturi de vânzare", "Unui bon fiscal", "Unui proces-verbal de inventariere"], "c": 0, "e": "Împrumutul se contractează pe bază de contract și se depune în contul bancar."},
+ {"t": "Credite bancare", "q": "Contul 5121 este folosit în exemplul din caiet pentru…", "a": ["Contul bancar", "Dobânzi", "Provizioane", "Obligațiuni"], "c": 0, "e": "5121 este contul bancar utilizat în formulele din exemplu."},
+ {"t": "Credite bancare", "q": "Care este formula notată pentru înregistrarea împrumutului bancar primit?", "a": ["5121 = 1621", "1621 = 5121", "666 = 1681", "6812 = 1512"], "c": 0, "e": "În caiet, înregistrarea creditului primit este 5121 = 1621."},
+ {"t": "Credite bancare", "q": "Care este formula notată pentru înregistrarea dobânzii aferente creditului?", "a": ["666 = 1682", "1682 = 666", "5121 = 1621", "1512 = 7812"], "c": 0, "e": "În exemplul din caiet apare formula 666 = 1682."},
+ {"t": "Obligațiuni", "q": "Ce este obligațiunea?", "a": ["O hârtie de valoare care atestă suma datorată de emitent", "Un document de încasare a salariului", "Un mijloc fix", "Un tip de provizion"], "c": 0, "e": "Aceasta este definiția din notițe."},
+ {"t": "Obligațiuni", "q": "Obligațiunea atestă pentru deținător…", "a": ["O sumă dată cu împrumut emitentului", "Dreptul de a încasa salariul", "Proprietatea asupra unui mijloc fix", "O cheltuială de exploatare"], "c": 0, "e": "Obligațiunea atestă suma dată cu împrumut emitentului, sub formă de datorie."},
+ {"t": "Obligațiuni", "q": "Vânzarea împrumutului/obligațiunilor se face prin…", "a": ["Bursa de valori", "Casa de marcat", "Registrul de casă", "Inventariere"], "c": 0, "e": "Notițele precizează că vânzarea se face prin bursa de valori."},
+ {"t": "Obligațiuni", "q": "Împrumuturile din emisiunea de obligațiuni sunt, în notițe, împrumuturi…", "a": ["Obligatare pe termen lung", "Fără dobândă, pe termen scurt", "Doar între salariați", "Pentru achiziții în numerar"], "c": 0, "e": "Sunt numite împrumuturi obligatare pe termen lung."},
+ {"t": "Obligațiuni", "q": "Ce cont evidențiază împrumuturile din emisiunea de obligațiuni?", "a": ["161", "162", "151", "666"], "c": 0, "e": "Contul 161 este «Împrumuturi din emisiunea de obligațiuni»."},
+ {"t": "Obligațiuni", "q": "Contul 161 are funcția contabilă…", "a": ["Pasivă", "Activă", "Bifuncțională numai pentru numerar", "Nu are funcție contabilă"], "c": 0, "e": "În clasificarea din caiet, contul 161 este marcat cu P (pasiv)."},
+ {"t": "Obligațiuni", "q": "În exemplul din caiet, contul 461 este denumit…", "a": ["Debitori", "Conturi la bănci în lei", "Cheltuieli privind dobânzile", "Provizioane"], "c": 0, "e": "În notițe, 461 apare cu denumirea «Debitori»."},
+ {"t": "Obligațiuni", "q": "În exemplul emisiunii, contul 1618 este denumit…", "a": ["Împrumuturi din emisiunea de obligațiuni", "Credite bancare pe termen lung", "Provizioane pentru litigii", "Dobânzi de plătit"], "c": 0, "e": "Aceasta este denumirea notată lângă contul 1618."},
+ {"t": "Obligațiuni", "q": "Dobânda lunară aferentă împrumutului obligatar se înregistrează ca…", "a": ["Cheltuială privind dobânzile", "Venit din vânzarea mărfurilor", "Provizion pentru garanții", "Capital social"], "c": 0, "e": "În caiet, dobânda lunară este înregistrată prin contul 666."},
+ {"t": "Obligațiuni", "q": "Ce cont apare în notițe pentru dobânzile aferente împrumuturilor din emisiuni de obligațiuni?", "a": ["1681", "1682", "1512", "1621"], "c": 0, "e": "În exemplu apare contul 1681 pentru dobânzile aferente împrumutului obligatar."},
+ {"t": "Obligațiuni", "q": "Care este formula notată pentru înregistrarea dobânzii obligațiunilor?", "a": ["666 = 1681", "1681 = 666", "5121 = 461", "6812 = 1512"], "c": 0, "e": "Formula din caiet este 666 = 1681."},
+ {"t": "Obligațiuni", "q": "Încasarea prin bancă a împrumutului obligatar este înregistrată în caiet prin…", "a": ["5121 = 461", "461 = 5121", "666 = 1681", "1512 = 7812"], "c": 0, "e": "În notițe apare formula 5121 = 461."},
+ {"t": "Provizioane", "q": "Provizioanele sunt sume constituite din…", "a": ["Profitul curent", "Capitalul social subscris", "Contul bancar personal", "Veniturile din vânzarea obligațiunilor"], "c": 0, "e": "Definiția din caiet: sume constituite din profitul curent."},
+ {"t": "Provizioane", "q": "Provizioanele se constituie pentru acoperirea…", "a": ["Pierderilor probabile", "Tuturor veniturilor viitoare", "Capitalului social", "Încasărilor certe"], "c": 0, "e": "Scopul lor este acoperirea unor pierderi probabile."},
+ {"t": "Provizioane", "q": "Care dintre următoarele situații este menționată ca motiv pentru constituirea provizioanelor?", "a": ["Litigii cu alte firme", "Încasarea unui credit", "Achiziția de mărfuri", "Plata unei facturi curente"], "c": 0, "e": "Notițele menționează litigii cu alte firme."},
+ {"t": "Provizioane", "q": "Care altă situație este menționată în notițe ca motiv pentru provizioane?", "a": ["Amenzi, penalități, despăgubiri și daune", "Încasări din vânzări", "Depuneri de numerar", "Achiziții de acțiuni"], "c": 0, "e": "Aceste riscuri și cheltuieli probabile sunt enumerate în definiție."},
+ {"t": "Provizioane", "q": "Provizioanele pot acoperi cheltuieli previzibile din…", "a": ["Garanții acordate, reparații sau servicii", "Doar salarii", "Doar impozite deja achitate", "Doar dividende"], "c": 0, "e": "Exemplele din caiet includ garanții acordate, reparații sau servicii."},
+ {"t": "Provizioane", "q": "Ce cont este folosit pentru provizioane?", "a": ["151", "161", "162", "5121"], "c": 0, "e": "Clasificarea din caiet identifică grupa 151 ca provizioane."},
+ {"t": "Provizioane", "q": "Contul 1511 reprezintă…", "a": ["Provizioane pentru litigii", "Provizioane pentru garanții acordate clienților", "Credite bancare pe termen lung", "Dobânzi aferente obligațiunilor"], "c": 0, "e": "1511 este denumit «Provizioane pentru litigii»."},
+ {"t": "Provizioane", "q": "Contul 1512 reprezintă…", "a": ["Provizioane pentru garanții acordate clienților", "Provizioane pentru litigii", "Împrumuturi obligatare", "Dobânzi bancare"], "c": 0, "e": "1512 este denumit «Provizioane pentru garanții acordate clienților»."},
+ {"t": "Provizioane", "q": "Contul 1513 se referă la provizioane pentru…", "a": ["Dezafectarea imobilizărilor corporale și alte acțiuni similare legate de acestea", "Litigii", "Dobânzi bancare", "Credite pe termen lung"], "c": 0, "e": "Aceasta este denumirea din lista de clasificare."},
+ {"t": "Provizioane", "q": "Contul 1514 este pentru provizioane pentru…", "a": ["Restructurare", "Litigii", "Garanții acordate clienților", "Împrumuturi obligatare"], "c": 0, "e": "În caiet: 1514 «Provizioane pentru restructurare»."},
+ {"t": "Provizioane", "q": "Contul 1515 este pentru provizioane pentru…", "a": ["Pensii și obligații similare", "Litigii", "Dobânzi", "Credite bancare"], "c": 0, "e": "În caiet: 1515 «Provizioane pentru pensii și obligații similare»."},
+ {"t": "Provizioane", "q": "Ce se întâmplă cu provizionul atunci când este constituit?", "a": ["Este evidențiat în contul 151", "Este înregistrat în contul 5121", "Este trecut direct în contul 162", "Este înregistrat în contul 461"], "c": 0, "e": "Contul 151 ține evidența provizioanelor."},
+ {"t": "Provizioane", "q": "Potrivit formulei din exemplu, la constituirea provizionului se debitează…", "a": ["6812", "1512", "7812", "5121"], "c": 0, "e": "Formula este 6812 = 1512; contul 6812 este în debit."},
+ {"t": "Provizioane", "q": "Potrivit formulei din exemplu, la constituirea provizionului se creditează…", "a": ["1512", "6812", "5121", "121"], "c": 0, "e": "Formula este 6812 = 1512; contul 1512 este în credit."},
+ {"t": "Provizioane", "q": "Care este formula contabilă din exemplu pentru constituirea provizionului pentru garanții acordate?", "a": ["6812 = 1512", "1512 = 7812", "121 = 6812", "5121 = 1621"], "c": 0, "e": "Aceasta este formula din caiet pentru constituire."},
+ {"t": "Provizioane", "q": "Ce înseamnă anularea unui provizion neutilizat?", "a": ["Provizionul nu mai este necesar și este reluat", "Se acordă un nou credit bancar", "Se emite o obligațiune", "Se încasează dobânda"], "c": 0, "e": "Notițele prezintă anularea provizionului neutilizat."},
+ {"t": "Provizioane", "q": "Care este formula din caiet pentru anularea provizionului neutilizat?", "a": ["1512 = 7812", "6812 = 1512", "5121 = 1621", "666 = 1681"], "c": 0, "e": "Formula notată pentru anulare este 1512 = 7812."},
+ {"t": "Provizioane", "q": "La anularea provizionului, contul 1512 se…", "a": ["Debitează", "Creditează", "Închide direct în 5121", "Transformă în cont de activ"], "c": 0, "e": "În formula 1512 = 7812, contul 1512 este debitat."},
+ {"t": "Provizioane", "q": "La anularea provizionului, contul 7812 se…", "a": ["Creditează", "Debitează", "Închide în 1621", "Nu se folosește"], "c": 0, "e": "În formula 1512 = 7812, contul 7812 este creditat."},
+ {"t": "Provizioane", "q": "La închiderea conturilor de venituri și cheltuieli, în exemplul din caiet apare contul…", "a": ["121", "5121", "1621", "461"], "c": 0, "e": "În formulele de închidere din caiet apare contul 121."},
+ {"t": "Provizioane", "q": "Care formulă din caiet închide cheltuiala cu provizionul?", "a": ["121 = 6812", "6812 = 1512", "1512 = 7812", "5121 = 461"], "c": 0, "e": "În exemplu apare 121 = 6812."},
+ {"t": "Provizioane", "q": "Care formulă din caiet închide venitul din anularea provizionului?", "a": ["7812 = 121", "121 = 7812", "6812 = 1512", "1621 = 5121"], "c": 0, "e": "În exemplu apare 7812 = 121."},
+ {"t": "Provizioane", "q": "Soldul final creditor al contului 151 reprezintă…", "a": ["Valoarea provizioanelor existente", "Valoarea creditelor bancare încasate", "Valoarea obligațiunilor emise", "Valoarea dobânzilor plătite"], "c": 0, "e": "Notițele precizează că soldul final creditor reprezintă valoarea provizioanelor existente."},
+ {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat creditelor bancare pe termen lung?", "a": ["162", "161", "151", "666"], "c": 0, "e": "162 = Credite bancare pe termen lung."},
+ {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat împrumuturilor din emisiunea de obligațiuni?", "a": ["161", "162", "1512", "5121"], "c": 0, "e": "161 = Împrumuturi din emisiunea de obligațiuni."},
+ {"t": "Recapitulare", "q": "Care dintre aceste conturi este asociat provizioanelor?", "a": ["151", "161", "162", "666"], "c": 0, "e": "151 = Provizioane."},
+ {"t": "Recapitulare", "q": "Care cont din notițe este cheltuiala privind dobânzile?", "a": ["666", "7812", "121", "461"], "c": 0, "e": "666 = Cheltuieli privind dobânzile."},
+ {"t": "Recapitulare", "q": "Ce tip de datorii reprezintă împrumuturile de la bănci sau de la alți agenți economici, contractate pentru acoperirea temporară a resurselor financiare?", "a": ["Datorii financiare", "Provizioane", "Venituri în avans", "Capitaluri proprii"], "c": 0, "e": "Notițele descriu împrumuturile ca datorii financiare, pasiv."},
+ {"t": "Recapitulare", "q": "În clasificarea din caiet, conturile 161 și 162 au funcția…", "a": ["Pasivă", "Activă", "De venit", "De cheltuială"], "c": 0, "e": "În tabelul de clasificare, conturile 161 și 162 sunt marcate cu P."},
+ {"t": "Recapitulare", "q": "Care afirmație descrie corect provizioanele?", "a": ["Sunt constituite pentru riscuri și cheltuieli probabile", "Sunt bani primiți de la bancă", "Sunt obligațiuni vândute la bursă", "Sunt dobânzi încasate"], "c": 0, "e": "Aceasta rezumă definiția provizioanelor din notițe."},
+ {"t": "Recapitulare", "q": "Care afirmație despre obligațiuni este corectă potrivit caietului?", "a": ["Emitentul datorează deținătorului suma împrumutată", "Obligațiunea este un provizion", "Obligațiunea reprezintă numerar în casă", "Obligațiunea este o rată bancară"], "c": 0, "e": "Obligațiunea atestă suma dată cu împrumut emitentului."},
+ {"t": "Recapitulare", "q": "Care afirmație despre creditul bancar este corectă potrivit caietului?", "a": ["Este contractat pe bază de contract și depus în contul bancar", "Nu are dobândă", "Nu are scadență", "Se înregistrează ca provizion"], "c": 0, "e": "Aceste caracteristici sunt menționate în notițe."}
+];
+
+const $ = id => document.getElementById(id);
+let peer=null, conn=null, isHost=false, solo=false, me="", other="", room="", idx=0, score=[0,0], answered=[false,false], myChoice=null, questions=[], waitingTimer=null;
+let prevScreen = "home";
+
+function show(id){
+ ["home","lobby","game","theory","help","end"].forEach(x => $(x).classList.toggle("hidden", x !== id));
+ window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function status(id,s){$(id).textContent=s}
+function send(data){if(conn&&conn.open)conn.send(data)}
+function clean(){if(waitingTimer)clearTimeout(waitingTimer);if(conn){conn.close();conn=null}if(peer){peer.destroy();peer=null}}
+function reset(){clean();score=[0,0];idx=0;answered=[false,false];myChoice=null;solo=false}
+
+$("create").onclick=()=>{
+ me=$("name").value.trim()||"Gazdă";isHost=true;room=Math.random().toString(36).slice(2,6).toUpperCase();
+ $("shownCode").textContent=room;$("hostName").textContent=me;$("guestName").textContent="Se conectează…";
+ $("guestState").textContent="În așteptare";$("start").disabled=true;show("lobby");status("lobbyStatus","Se creează camera…");
+ peer=new Peer("conta-duel-"+room.toLowerCase());
+ peer.on("open",()=>status("lobbyStatus","Camera este gata! Trimite codul "+room+" prietenului."));
+ peer.on("connection",c=>{if(conn){c.close();return}conn=c;wire();});
+ peer.on("error",e=>status("lobbyStatus","Eroare de conexiune: "+e.type+". Încearcă alt cod."));
+};
+
+$("join").onclick=()=>{
+ me=$("name").value.trim()||"Jucător 2";room=$("roomCode").value.trim().toUpperCase();
+ if(room.length<4){status("homeStatus","Introdu codul camerei primit de la prieten.");return}
+ isHost=false;status("homeStatus","Se conectează la camera "+room+"…");peer=new Peer();
+ peer.on("open",()=>{conn=peer.connect("conta-duel-"+room.toLowerCase());wire()});
+ peer.on("error",e=>status("homeStatus","Nu s-a putut conecta ("+e.type+"). Verificați codul și încercați din nou."));
+};
+
+function wire(){
+ conn.on("open",()=>{
+  if(isHost){other="Prieten";$("guestName").textContent="Conectat";$("guestState").textContent="Online";$("start").disabled=false;status("lobbyStatus","Prietenul s-a conectat! Puteți începe.");send({type:"hello",name:me})}
+  else{status("homeStatus","Conectat! Se pregătește jocul…");send({type:"hello",name:me})}
+ });
+ conn.on("data",d=>{
+  if(d.type==="hello"&&isHost){other=d.name;$("guestName").textContent=other;$("guestState").textContent="Online";$("start").disabled=false;status("lobbyStatus",other+" s-a conectat. Puteți începe!")}
+  if(d.type==="begin"&&!isHost){other=d.host;questions=d.questions;score=[0,0];idx=0;show("game");renderQuestion()}
+  if(d.type==="question"&&!isHost){idx=d.idx;score=d.score;answered=[false,false];myChoice=null;renderQuestion()}
+  if(d.type==="answer"&&isHost){answered[1]=true;score[1]+=d.correct?1:0;updateScores();status("waitStatus",other+" a răspuns. "+(answered[0]?"Amândoi ați răspuns.":"Se așteaptă răspunsul tău…"));if(answered[0])reveal()}
+  if(d.type==="reveal"&&!isHost){score=d.score;revealUI(d.choices)}
+  if(d.type==="finish"&&!isHost){score=d.score;finish()}
+  if(d.type==="again"&&!isHost){score=[0,0];idx=0;questions=d.questions;renderQuestion()}
+ });
+ conn.on("close",()=>{status("waitStatus","Conexiunea s-a întrerupt. Reîmprospătați pagina și reconectați-vă.");});
+}
+
+function begin(){
+ questions=shuffle(Q);score=[0,0];idx=0;show("game");$("modeLabel").textContent="DUEL LIVE";renderQuestion();send({type:"begin",host:me,questions});
+}
+$("start").onclick=()=>{if(isHost&&conn&&conn.open)begin()};
+
+function makeHint(q){
+ const text=q.q.toLowerCase();
+ if(q.t==="Credite bancare"){
+  if(text.includes("162")) return "Indiciu: gândește-te la categoria de împrumuturi primite de la bancă și la durata lor.";
+  if(text.includes("dobând")||text.includes("666")) return "Indiciu: caută contul de cheltuieli financiare care are legătură cu dobânda (clasa 6).";
+  if(text.includes("întârziere")||text.includes("plătite cu întârziere")) return "Indiciu: neplata la scadență poate aduce costuri suplimentare și măsuri de recuperare.";
+  if(text.includes("5121")) return "Indiciu: este contul care apare în formulele de încasare/plată prin bancă.";
+  return "Indiciu: creditele din această lecție sunt pe termen lung, au dobândă și se acordă în baza unui contract.";
+ }
+ if(q.t==="Obligațiuni"){
+  if(text.includes("161")) return "Indiciu: este contul pentru împrumuturi obținute prin emiterea de titluri de datorie.";
+  if(text.includes("461")) return "Indiciu: în notițe, acest cont are denumirea «Debitori».";
+  if(text.includes("dobând")) return "Indiciu: dobânda este o cheltuială financiară; uită-te la conturile 666 și 1681.";
+  return "Indiciu: emitentul primește un împrumut, iar obligațiunea atestă suma pe care o datorează deținătorului.";
+ }
+ if(q.t==="Provizioane"){
+  if(text.includes("151")) return "Indiciu: grupa începe cu 15 și este rezervată provizioanelor. Uită-te la subconturile 1511–1515.";
+  if(text.includes("6812")||text.includes("7812")||text.includes("formul")) return "Indiciu: la constituire se folosește 6812 (cheltuială); la anularea provizionului neutilizat apare 7812 (venit).";
+  return "Indiciu: provizioanele acoperă riscuri și cheltuieli probabile, nu datorii certe deja plătite.";
+ }
+ return "Indiciu: deschide butonul «❓ Ajutor & Conturi» ca să vezi tabelul complet!";
+}
+
+function renderQuestion(){
+ answered=[false,false];myChoice=null;$("feedback").classList.add("hidden");$("next").classList.add("hidden");
+ $("hintBox").classList.add("hidden");$("hintBox").textContent="";$("hintBtn").disabled=false;
+ let q=questions[idx];
+ $("roundLabel").textContent="ÎNTREBAREA "+(idx+1)+"/"+questions.length;
+ $("bar").style.width=(idx/questions.length*100)+"%";
+ $("topic").textContent=q.t.toUpperCase();
+ $("question").textContent=q.q;
+ $("answers").innerHTML="";
+ q.a.forEach((a,i)=>{
+  let b=document.createElement("button");
+  b.className="answer";
+  b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';
+  b.lastChild.textContent=a;
+  b.onclick=()=>choose(i,b);
+  $("answers").appendChild(b);
+ });
+ status("waitStatus",solo?"Alege răspunsul corect.":"Așteptăm răspunsurile…");
+ $("answerCount").textContent=solo?"":"Tu: — · "+(other||"Prieten")+": —";
+ updateScores();
+}
+
+function choose(i,b){
+ if(myChoice!==null)return;myChoice=i;let q=questions[idx];[...$("answers").children].forEach(x=>x.disabled=true);b.classList.add("selected");
+ let correct=i===q.c;
+ if(solo){score[0]+=correct?1:0;answered=[true,true];reveal();return}
+ if(isHost){answered[0]=true;score[0]+=correct?1:0;updateScores();status("waitStatus","Ai răspuns. Se așteaptă "+other+"…");if(answered[1])reveal()}
+ else{send({type:"answer",correct});status("waitStatus","Răspuns trimis. Se așteaptă rezultatul…")}
+}
+
+function updateScores(){$("p1name").textContent=me||"Tu";$("p2name").textContent=other||"Prieten";$("p1score").textContent=score[0];$("p2score").textContent=score[1];}
+
+function reveal(){
+ let q=questions[idx],choices=[myChoice];if(isHost){send({type:"reveal",score,choices});}
+ revealUI(choices);
+}
+
+function revealUI(choices){
+ let q=questions[idx];[...$("answers").children].forEach((b,i)=>{b.disabled=true;if(i===q.c)b.classList.add("correct");else if(i===myChoice)b.classList.add("wrong")});
+ let correct=myChoice===q.c;$("feedback").className="feedback "+(correct?"good":"bad");
+ $("feedback").innerHTML="<strong>"+(correct?"Corect! +1 punct":"Nu chiar. Răspuns corect: "+String.fromCharCode(65+q.c))+"</strong><br>"+q.e;
+ $("feedback").classList.remove("hidden");
+ status("waitStatus",solo?"Ai terminat întrebarea.": "Răspunsurile au fost înregistrate.");
+ $("answerCount").textContent="Scor actualizat";$("next").classList.remove("hidden");
+ $("next").textContent=idx===questions.length-1?"Vezi rezultatul →":"Următoarea întrebare →";updateScores();
+ if(!isHost&&!solo)$("next").disabled=true;
+}
+
+$("next").onclick=()=>{
+ if(!isHost&&!solo)return;
+ if(idx===questions.length-1){if(isHost)send({type:"finish",score});finish();return}
+ idx++;if(solo||isHost){renderQuestion();if(isHost)send({type:"question",idx,score})}
+};
+
+function finish(){
+ show("end");$("endP1").textContent=me||"Tu";$("endP2").textContent=other||"Prieten";$("endS1").textContent=score[0];$("endS2").textContent=score[1];
+ $("winner").textContent=score[0]===score[1]?"Egalitate! 🤝":(score[0]>score[1]?me:other)+" câștigă! 🏆";
+ $("endText").textContent="Ați răspuns la "+questions.length+" întrebări. "+(score[0]===score[1]?"Scor egal — revanșă?":"Felicitări! Mai faceți o rundă ca să fixați materia.");
+}
+
+$("again").onclick=()=>{if(solo){score=[0,0];questions=shuffle(Q);idx=0;renderQuestion();show("game")}else if(isHost&&conn){begin()}};
+$("homeBtn").onclick=()=>{reset();show("home")};
+$("back").onclick=()=>{reset();show("home")};
+
+// Butoane Teorie
+$("openTheory").onclick=()=>{prevScreen="home";show("theory");filterTheory("all")};
+$("theoryFromGame").onclick=()=>{prevScreen="game";show("theory");filterTheory("all")};
+$("theoryBack").onclick=()=>show(prevScreen);
+$("startFromTheory").onclick=()=>{$("solo").click()};
+
+// Butoane Ajutor & Plan de conturi
+$("openHelp").onclick=()=>{prevScreen="home";show("help")};
+$("helpFromGame").onclick=()=>{prevScreen="game";show("help")};
+$("helpBack").onclick=()=>show(prevScreen);
+$("startFromHelp").onclick=()=>{$("solo").click()};
+
+// Indiciu
+$("hintBtn").onclick=()=>{let q=questions[idx];$("hintBox").textContent=makeHint(q);$("hintBox").classList.remove("hidden");$("hintBtn").disabled=true};
+
+// Filtrare tab-uri teorie
+function filterTheory(tab){
+ document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x.dataset.tab===tab));
+ document.querySelectorAll(".theory-block[data-topic]").forEach(x=>x.classList.toggle("hidden",tab!=="all"&&x.dataset.topic!==tab));
+}
+document.querySelectorAll("[data-tab]").forEach(x=>x.onclick=()=>filterTheory(x.dataset.tab));
+
+// Solo
+$("solo").onclick=()=>{reset();solo=true;me=$("name").value.trim()||"Tu";other="";questions=shuffle(Q);$("modeLabel").textContent="ANTRENAMENT";show("game");renderQuestion()};
+</script>
+</body>
+</html>
